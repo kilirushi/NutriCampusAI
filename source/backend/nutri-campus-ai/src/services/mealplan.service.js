@@ -6,6 +6,7 @@ const buildMealPlanPrompt = require("../prompts/mealplan.prompt");
 const { mealPlanRef, dishStatistics } = require("../models/mealplan.model");
 const { calculateCalories } = require("../utils/calorie.util");
 const { getWeekMondayISO } = require("../utils/date.util");
+let dailyRefreshPromise = null;
 
 const DAYS = [
   "Monday",
@@ -25,18 +26,22 @@ const MEAL_TIMES = {
 
 const MEALS = ["Breakfast", "Lunch", "Dinner"];
 
-// NEW
+// ---- NEW: prefer generated menu, fallback to static menu ----
 const FALLBACK_MENU_PATH = path.join(
   __dirname,
   "../data/dining_hall_menu.json",
-);
-const GENERATED_MENU_PATH = path.join(__dirname, "../data/dining_hall.json");
-const MEAL_PLAN_SCRIPT_PATH = path.join(__dirname, "../data/meal_plan.js");
-let dailyRefreshPromise = null;
+); // existing
+const GENERATED_MENU_PATH = path.join(__dirname, "../data/dining_hall.json"); // new output
+const MEAL_PLAN_SCRIPT_PATH = path.join(__dirname, "../data/meal_plan.js"); // adjust if script lives elsewhere
 
-const runMealPlanScript = (timeoutMs = 45000) => {
+const readJsonSafe = (filePath) => {
+  const raw = fs.readFileSync(filePath, "utf-8");
+  return JSON.parse(raw);
+};
+
+const runMealPlanScript = (timeoutMs = 45_000) => {
   return new Promise((resolve, reject) => {
-    // Use "node" on Windows; use process.execPath to be safe
+    // Run: node meal_plan.js (process.execPath is your node binary)
     const child = spawn(process.execPath, [MEAL_PLAN_SCRIPT_PATH], {
       stdio: ["ignore", "pipe", "pipe"],
       windowsHide: true,
@@ -67,11 +72,6 @@ const runMealPlanScript = (timeoutMs = 45000) => {
   });
 };
 
-const readJsonSafe = (filePath) => {
-  const raw = fs.readFileSync(filePath, "utf-8");
-  return JSON.parse(raw);
-};
-
 const isSameLocalDate = (a, b) => {
   return (
     a.getFullYear() === b.getFullYear() &&
@@ -100,20 +100,19 @@ const ensureDailyMenuFreshness = async () => {
 
 const loadDiningMenuPreferFresh = async () => {
   try {
-    // Regenerate menu at most once per local day.
+    // Only regenerate once per day (and share the same promise across requests)
     await ensureDailyMenuFreshness();
 
-    // Read generated output.
+    // Read generated menu
     const generated = readJsonSafe(GENERATED_MENU_PATH);
 
-    // Very light sanity check.
+    // quick sanity check
     if (!generated || typeof generated !== "object") {
       throw new Error("Generated menu JSON is not an object");
     }
 
     return generated;
   } catch (err) {
-    // Fallback.
     console.warn(
       "[MealPlan] Using fallback dining_hall_menu.json:",
       err.message,
@@ -129,7 +128,7 @@ const createMealPlan = (studentId, height_cm, weight_kg) => {
         // 1️⃣ Tính BMI + calories
         const { bmi, dailyCalories } = calculateCalories(height_cm, weight_kg);
 
-        // 2️⃣ Load menu (NEW: prefer fresh, fallback automatically)
+        // 2️⃣ Load menu (prefer fresh generated, fallback automatically)
         const menuData = await loadDiningMenuPreferFresh();
 
         // 3️⃣ Build prompt
@@ -178,7 +177,7 @@ const createMealPlan = (studentId, height_cm, weight_kg) => {
                   : rawPlan[day][mealName].dishes || [];
 
                 mealPlan[day][mealName] = {
-                  dishes: dishes,
+                  dishes,
                   time: MEAL_TIMES[mealName],
                 };
               }
@@ -196,7 +195,6 @@ const createMealPlan = (studentId, height_cm, weight_kg) => {
                 meals: mealPlan,
               });
 
-            // 8️⃣ Resolve mealPlan
             resolve(mealPlan);
           } catch (err) {
             reject(err);
