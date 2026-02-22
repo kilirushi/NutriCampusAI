@@ -1,11 +1,10 @@
 const express = require("express");
 const path = require("path");
-const path = require("path");
 const mealplanRoutes = require("./routes/mealplan.route");
 const mealplanService = require("./services/mealplan.service");
 
 const app = express();
-
+app.use(express.json());
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "view"));
 
