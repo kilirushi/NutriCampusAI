@@ -29,7 +29,7 @@ const createMealPlan = (studentId, height_cm, weight_kg) => {
       const menuPath = path.join(__dirname, "../data/dining_hall_menu.json");
       const menuData = JSON.parse(fs.readFileSync(menuPath, "utf-8"));
 
-      // 3️⃣ Build prompt (ĐÚNG KEY)
+      // 3️⃣ Build prompt
       const prompt = buildMealPlanPrompt({
         BMI: bmi,
         CALORIES: dailyCalories,
@@ -58,14 +58,17 @@ const createMealPlan = (studentId, height_cm, weight_kg) => {
         }
 
         try {
-          // 5️⃣ Làm sạch output (rất quan trọng)
+          // 5️⃣ Làm sạch output
           const jsonStart = output.indexOf("{");
           const jsonEnd = output.lastIndexOf("}");
           const cleanJson = output.substring(jsonStart, jsonEnd + 1);
 
           const mealPlan = JSON.parse(cleanJson);
 
-          // 6️⃣ Validate structure
+          // 6️⃣ Thêm BMI vào mealPlan
+          mealPlan.BMI = bmi;
+
+          // 7️⃣ Validate structure
           for (const day of DAYS) {
             if (
               !mealPlan[day] ||
@@ -77,7 +80,7 @@ const createMealPlan = (studentId, height_cm, weight_kg) => {
             }
           }
 
-          // 7️⃣ Lưu Firebase
+          // 8️⃣ Lưu Firebase
           const weekStart = getWeekMondayISO();
 
           await mealPlanRef
@@ -90,6 +93,7 @@ const createMealPlan = (studentId, height_cm, weight_kg) => {
               meals: mealPlan
             });
 
+          // 9️⃣ Resolve mealPlan có BMI
           resolve(mealPlan);
         } catch (err) {
           reject(err);
