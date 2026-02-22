@@ -7,7 +7,7 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "view"));
 
-app.use(express.json());
+app.use(express.static(path.join(__dirname, "view"))); // quick fix
 
 app.get("/", (req, res) => {
   res.render("index"); // renders src/view/index.ejs

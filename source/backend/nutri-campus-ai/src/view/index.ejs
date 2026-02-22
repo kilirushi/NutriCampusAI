@@ -1,11 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Admin Dashboard - NutriCampusAI</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    Hello
+    <div class="layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <a class="brand" href="#" id="nav-home">NutriCampusAI</a>
+
+        <nav class="side-nav" aria-label="Sidebar navigation">
+          <a class="side-link is-active" href="#" id="nav-mealplans"
+            >Meal Plans</a
+          >
+          <a class="side-link" href="#" id="nav-rates">Rates</a>
+          <a class="side-link" href="#" id="nav-reports">Reports</a>
+        </nav>
+      </aside>
+
+      <!-- Main -->
+      <main class="main">
+        <!-- Top bar -->
+        <header class="topbar">
+          <div class="page-title" id="pageTitle">Admin Dashboard</div>
+          <div class="welcome">Welcome, Admin</div>
+        </header>
+
+        <!-- Cards area -->
+        <section class="stats" aria-label="Dashboard cards">
+          <!-- HOME / MEAL PLANS VIEW -->
+          <div class="view is-active" id="view-home">
+            <article class="card">
+              <h3>Total Users</h3>
+              <div class="value">&lt;%= totalUsers %&gt;</div>
+            </article>
+
+            <article class="card">
+              <h3>Total Meal Plans</h3>
+              <div class="value">&lt;%= totalPlans %&gt;</div>
+            </article>
+          </div>
+
+          <!-- RATES VIEW -->
+          <div class="view" id="view-rates">
+            <article class="card">
+              <h3>Today Rating</h3>
+              <div class="value">&lt;%= todayRating %&gt;</div>
+            </article>
+
+            <article class="card">
+              <h3>All-Time Rating</h3>
+              <div class="value">&lt;%= allTimeRating %&gt;</div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="switch.js"></script>
   </body>
 </html>
