@@ -233,7 +233,56 @@ const getTopDishes = async () => {
   return result;
 };
 
-const getDislikedDishes = async (weekStart) => {
+const getDislikedDishes = async () => {
+  const weekStart = getWeekMondayISO();
+  // const snapshot = await dishStatistics.child(`weekly/weekOf_${weekStart}`).once("value");
+  const snapshot = await dishStatistics.child("global").once("value");
+  const stats = snapshot.val();
+  if (!stats) return null;
+
+  const result = {};
+
+  for (const meal of Object.keys(stats)) {
+    const dishes = Object.entries(stats[meal])
+      .filter(([_, data]) => data.average < 3)   // 🔥 điều kiện < 3
+      .sort((a, b) => a[1].average - b[1].average); // 🔥 sort tăng dần (tệ nhất lên trước)
+
+    result[meal] = dishes.map(([dish, data]) => ({
+      dish,
+      average: data.average,
+      totalVotes: data.totalCount
+    }));
+  }
+
+  return result;
+};
+
+
+const getTopDishesWeek = async () => {
+  const weekStart = getWeekMondayISO();
+  const snapshot = await dishStatistics.child(`weekly/weekOf_${weekStart}`).once("value");  
+  const stats = snapshot.val();
+  if (!stats) return null;
+
+  const result = {};
+
+  for (const meal of Object.keys(stats)) {
+    const dishes = Object.entries(stats[meal])
+      .filter(([_, data]) => data.average > 3)   // 🔥 điều kiện > 3
+      .sort((a, b) => a[1].average - b[1].average); // 🔥 sort tăng dần (tệ nhất lên trước)
+
+    result[meal] = dishes.map(([dish, data]) => ({
+      dish,
+      average: data.average,
+      totalVotes: data.totalCount
+    }));
+  }
+
+  return result;
+};
+
+const getDislikedDishesWeek = async () => {
+  const weekStart = getWeekMondayISO();
   const snapshot = await dishStatistics.child(`weekly/weekOf_${weekStart}`).once("value");
   const stats = snapshot.val();
   if (!stats) return null;
@@ -260,5 +309,7 @@ module.exports = {
   createMealPlan,
   saveDishRatings,
   getTopDishes,
-  getDislikedDishes
+  getDislikedDishes,
+  getTopDishesWeek,
+  getDislikedDishesWeek
 };

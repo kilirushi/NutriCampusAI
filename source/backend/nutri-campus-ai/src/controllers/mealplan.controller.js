@@ -64,4 +64,61 @@ const getTopDishes = async (req, res) => {
   }
 };
 
-module.exports = { generateMealPlan,rateDish,getTopDishes };
+const getDislikedDishes = async (req, res) => {
+  try {
+    const topDishes = await mealplanService.getDislikedDishes();
+
+    return res.json({
+      code: 200,
+      message: "Dish ratings saved successfully",
+      data: topDishes
+    });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({
+      code: 500,
+      message: "Failed to save dish ratings",
+      data: null
+    });
+  }
+};
+
+const getTopDishesWeek = async (req, res) => {
+  try {
+    const topDishes = await mealplanService.getDislikedDishesWeek();
+
+    return res.json({
+      code: 200,
+      message: "Dish ratings saved successfully",
+      data: topDishes
+    });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({
+      code: 500,
+      message: "Failed to save dish ratings",
+      data: null
+    });
+  }
+};
+
+const getDislikedDishesWeek = async (req, res) => {
+  try {
+    const topDishes = await mealplanService.getDislikedDishesWeek();
+
+    return res.json({
+      code: 200,
+      message: "Dish ratings saved successfully",
+      data: topDishes
+    });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({
+      code: 500,
+      message: "Failed to save dish ratings",
+      data: null
+    });
+  }
+};
+
+module.exports = { generateMealPlan,rateDish,getTopDishes,getDislikedDishes,getTopDishesWeek,getDislikedDishesWeek };
