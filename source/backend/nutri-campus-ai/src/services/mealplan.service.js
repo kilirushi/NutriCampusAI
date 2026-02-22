@@ -3,7 +3,7 @@ const path = require("path");
 const { spawn } = require("child_process");
 
 const buildMealPlanPrompt = require("../prompts/mealplan.prompt");
-const { mealPlanRef,dishStatistics } = require("../models/mealplan.model");
+const { mealPlanRef, dishStatistics } = require("../models/mealplan.model");
 const { calculateCalories } = require("../utils/calorie.util");
 const { getWeekMondayISO } = require("../utils/date.util");
 
@@ -14,10 +14,10 @@ const DAYS = [
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday"
+  "Sunday",
 ];
 
-const MEALS = ["Breakfast","Lunch","Dinner"];
+const MEALS = ["Breakfast", "Lunch", "Dinner"];
 
 const createMealPlan = (studentId, height_cm, weight_kg) => {
   return new Promise((resolve, reject) => {
@@ -33,12 +33,12 @@ const createMealPlan = (studentId, height_cm, weight_kg) => {
       const prompt = buildMealPlanPrompt({
         BMI: bmi,
         CALORIES: dailyCalories,
-        MENU: menuData
+        MENU: menuData,
       });
 
       // 4️⃣ Spawn Ollama
       const child = spawn("ollama", ["run", "llama3.2"], {
-        stdio: ["pipe", "pipe", "pipe"]
+        stdio: ["pipe", "pipe", "pipe"],
       });
 
       let output = "";
@@ -87,7 +87,7 @@ const createMealPlan = (studentId, height_cm, weight_kg) => {
               bmi,
               dailyCalories,
               createdAt: Date.now(),
-              meals: mealPlan
+              meals: mealPlan,
             });
 
           resolve(mealPlan);
@@ -125,7 +125,6 @@ const saveDishRatings = async (studentId, weekStart, day, ratings) => {
 
   for (const meal of Object.keys(ratings)) {
     for (const dish of Object.keys(ratings[meal])) {
-
       const newScore = ratings[meal][dish];
       const oldScore = existingRatings?.[meal]?.[dish] ?? null;
 
@@ -135,8 +134,8 @@ const saveDishRatings = async (studentId, weekStart, day, ratings) => {
           dish,
           newScore,
           oldScore,
-          weekStart
-        })
+          weekStart,
+        }),
       );
     }
   }
@@ -146,33 +145,31 @@ const saveDishRatings = async (studentId, weekStart, day, ratings) => {
 
   await ratingDayRef.set({
     ...ratings,
-    updatedAt: Date.now()
+    updatedAt: Date.now(),
   });
 
   return { success: true };
 };
-
-
 
 const updateDishStatistics = async ({
   meal,
   dish,
   newScore,
   oldScore,
-  weekStart
+  weekStart,
 }) => {
-
   const globalRef = dishStatistics.child(`global/${meal}/${dish}`);
-  const weeklyRef = dishStatistics.child(`weekly/weekOf_${weekStart}/${meal}/${dish}`);
+  const weeklyRef = dishStatistics.child(
+    `weekly/weekOf_${weekStart}/${meal}/${dish}`,
+  );
 
   const updateLogic = async (ref) => {
     await ref.transaction((data) => {
-
       if (!data) {
         return {
           totalScore: newScore,
           totalCount: 1,
-          average: newScore
+          average: newScore,
         };
       }
 
@@ -191,17 +188,13 @@ const updateDishStatistics = async ({
       return {
         totalScore,
         totalCount,
-        average: parseFloat((totalScore / totalCount).toFixed(2))
+        average: parseFloat((totalScore / totalCount).toFixed(2)),
       };
     });
   };
 
-  await Promise.all([
-    updateLogic(globalRef),
-    updateLogic(weeklyRef)
-  ]);
+  await Promise.all([updateLogic(globalRef), updateLogic(weeklyRef)]);
 };
-
 
 const getTopDishes = async () => {
   const snapshot = await dishStatistics.child("global").once("value");
@@ -212,13 +205,13 @@ const getTopDishes = async () => {
 
   for (const meal of Object.keys(stats)) {
     const dishes = Object.entries(stats[meal])
-      .filter(([_, data]) => data.average > 3)   // 🔥 điều kiện > 3
+      .filter(([_, data]) => data.average > 3) // 🔥 điều kiện > 3
       .sort((a, b) => a[1].average - b[1].average); // 🔥 sort tăng dần (tệ nhất lên trước)
 
     result[meal] = dishes.map(([dish, data]) => ({
       dish,
       average: data.average,
-      totalVotes: data.totalCount
+      totalVotes: data.totalCount,
     }));
   }
 
@@ -226,7 +219,9 @@ const getTopDishes = async () => {
 };
 
 const getDislikedDishes = async (weekStart) => {
-  const snapshot = await dishStatistics.child(`weekly/weekOf_${weekStart}`).once("value");
+  const snapshot = await dishStatistics
+    .child(`weekly/weekOf_${weekStart}`)
+    .once("value");
   const stats = snapshot.val();
   if (!stats) return null;
 
@@ -234,23 +229,22 @@ const getDislikedDishes = async (weekStart) => {
 
   for (const meal of Object.keys(stats)) {
     const dishes = Object.entries(stats[meal])
-      .filter(([_, data]) => data.average < 3)   // 🔥 điều kiện < 3
+      .filter(([_, data]) => data.average < 3) // 🔥 điều kiện < 3
       .sort((a, b) => a[1].average - b[1].average); // 🔥 sort tăng dần (tệ nhất lên trước)
 
     result[meal] = dishes.map(([dish, data]) => ({
       dish,
       average: data.average,
-      totalVotes: data.totalCount
+      totalVotes: data.totalCount,
     }));
   }
 
   return result;
 };
 
-
 module.exports = {
   createMealPlan,
   saveDishRatings,
   getTopDishes,
-  getDislikedDishes
+  getDislikedDishes,
 };
