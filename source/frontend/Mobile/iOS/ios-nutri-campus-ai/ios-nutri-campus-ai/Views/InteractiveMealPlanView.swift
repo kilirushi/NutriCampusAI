@@ -190,6 +190,7 @@ struct InteractiveMealPlanView: View {
     
     // MARK: - Editable Logic
     func isDayEditable(dayName: String, time: MealTime?) -> Bool {
+        return true
         let todayName = getTodayName()
         guard dayName == todayName else { return false }
         guard let time = time else { return false }
