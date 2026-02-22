@@ -1,2 +1,2 @@
 # NutriCampusAI
-AI-Powered Smart Nutrition for Camus Wellness
+AI-Powered Smart Nutrition for Campus Wellness
