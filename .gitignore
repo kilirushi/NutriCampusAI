@@ -1,0 +1,110 @@
+############################
+# NODE.JS
+############################
+
+# Dependencies
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+out/
+.next/
+.nuxt/
+coverage/
+
+# Cache
+.cache/
+.parcel-cache/
+.eslintcache
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional npm cache
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Vercel / Netlify
+.vercel
+.netlify
+
+
+############################
+# XCODE (iOS / macOS)
+############################
+
+# Build
+build/
+DerivedData/
+*.xcarchive
+
+# Xcode user data
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# Swift Package Manager
+.build/
+Packages/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Firebase
+GoogleService-Info.plist
+
+# Logs
+*.log
+
+
+############################
+# IDE & OS
+############################
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# JetBrains
+.idea/
+
+# Temp files
+*.swp
+*.tmp
