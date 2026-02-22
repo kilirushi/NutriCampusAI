@@ -84,6 +84,8 @@ fastlane/test_output
 
 # Firebase
 GoogleService-Info.plist
+serviceAccountKey.json
+
 
 # Logs
 *.log

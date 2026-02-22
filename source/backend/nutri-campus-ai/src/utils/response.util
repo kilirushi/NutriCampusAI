@@ -1,0 +1,17 @@
+function success(res, data, message = "Success") {
+  return res.status(200).json({
+    code: 200,
+    message,
+    data
+  });
+}
+
+function error(res, code = 500, message = "Error") {
+  return res.status(code).json({
+    code,
+    message,
+    data: null
+  });
+}
+
+module.exports = { success, error };

@@ -5,7 +5,7 @@ const mealplanRoutes = require("./routes/mealplan.route");
 const app = express();
 
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "view"));
 
 app.use(express.json());
 
