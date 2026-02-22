@@ -45,3 +45,14 @@ $$
 ```bash
 git clone https://github.com/your-username/NutriCampusAI.git
 cd NutriCampusAI
+```
+
+### 2. Install backend dependencies
+```bash
+cd backend/nutri-campus-ai
+npm install
+```
+### 3. Configure Firebase
+Create a Firebase project with Realtime Database.
+Download firebaseConfig.json from your Firebase console.
+Place the file in backend/config/ and ensure it contains your project credentials.
