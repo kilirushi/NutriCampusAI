@@ -23,11 +23,6 @@ struct InteractiveMealPlanView: View {
                         
                         // MARK: Header
                         VStack(spacing: 6) {
-//                            Text("Weekly Meal Plan")
-//                                .font(.largeTitle)
-//                                .fontWeight(.bold)
-//                                .foregroundStyle(themeColor)
-                            
                             Text("Your BMI: \(plan.BMI, specifier: "%.1f")")
                                 .font(.headline)
                                 .foregroundColor(.secondary)
