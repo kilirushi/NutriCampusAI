@@ -16,6 +16,10 @@ class MealPlanViewModel: ObservableObject {
 
     private let cacheDays: TimeInterval = 1 * 24 * 60 * 60 // 1 ngày
     private let mealPlanFileName = "mealplan.json"
+    
+    var studentId: String {
+            UserDefaults.standard.string(forKey: "studentId") ?? ""
+    }
 
     // MARK: - Check nếu tuần này đã tạo
     func isMealPlanGeneratedThisWeek(studentId: String) -> Bool {
@@ -67,15 +71,29 @@ class MealPlanViewModel: ObservableObject {
     }
 
     // MARK: - Update rating
-    func updateDishRating(dishId: UUID, newRating: Int) {
+    func updateDishRating(dishId: UUID, newRating: Int,day:String) {
         guard var plan = mealPlan else { return }
         plan.updateDishRating(dishId: dishId, newRating: newRating)
         
         // Gán lại để SwiftUI nhận thay đổi
         self.mealPlan = plan
         
+        
         // Lưu file async
         saveMealPlanToLocal(plan)
+        
+        // async api
+        
+        if let mondayPlan = self.mealPlan?.dayPlan(for: day),let dict = UserDefaults.standard.dictionary(forKey: "generatedWeeks") as? [String: [String: Any]],let info = dict[studentId],let savedWeek = info["week"] as? String {
+            let rating =  mondayPlan.filteredRatedDishes().toRatingsDictionary()
+            Task {
+                do {
+                    let plan = try await APIService.shared.rateDish(studentId: studentId, weekStart: savedWeek, day: day, ratings: rating)
+                } catch {
+                    print(error)
+                }
+            }
+        }
     }
 
     // MARK: - Private helpers

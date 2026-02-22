@@ -110,3 +110,5 @@ Thumbs.db
 # Temp files
 *.swp
 *.tmp
+
+serviceAccountKey.json

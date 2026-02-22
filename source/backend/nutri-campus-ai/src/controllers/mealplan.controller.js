@@ -9,7 +9,6 @@ const generateMealPlan = async (req, res) => {
       return res.status(400).json({ message: "Missing parameters" });
     }
     const mealPlan = await mealplanService.createMealPlan(student_id, height_cm, weight_kg);
-    console.log(mealPlan);
     return success(res, mealPlan, "Generate meal plan successfully");
   } catch (err) {
     console.error(err);

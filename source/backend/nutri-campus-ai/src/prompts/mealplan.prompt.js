@@ -35,6 +35,7 @@ MENU (use ONLY these items):
 ${JSON.stringify(MENU)}
 
 IMPORTANT:
+Do not repeat dishes within the same day.
 Return ONLY valid JSON.
 Do not add any text before or after the JSON.
 `;
