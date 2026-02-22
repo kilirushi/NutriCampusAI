@@ -19,88 +19,159 @@ const DAYS = [
 
 const MEALS = ["Breakfast", "Lunch", "Dinner"];
 
+// NEW
+const FALLBACK_MENU_PATH = path.join(
+  __dirname,
+  "../data/dining_hall_menu.json",
+);
+const GENERATED_MENU_PATH = path.join(__dirname, "../data/dining_hall.json");
+const MEAL_PLAN_SCRIPT_PATH = path.join(__dirname, "../data/meal_plan.js");
+
+const runMealPlanScript = (timeoutMs = 45000) => {
+  return new Promise((resolve, reject) => {
+    // Use "node" on Windows; use process.execPath to be safe
+    const child = spawn(process.execPath, [MEAL_PLAN_SCRIPT_PATH], {
+      stdio: ["ignore", "pipe", "pipe"],
+      windowsHide: true,
+    });
+
+    let stderr = "";
+    child.stderr.on("data", (d) => (stderr += d.toString()));
+
+    const timer = setTimeout(() => {
+      child.kill("SIGKILL");
+      reject(new Error(`meal_plan.js timed out after ${timeoutMs}ms`));
+    }, timeoutMs);
+
+    child.on("error", (err) => {
+      clearTimeout(timer);
+      reject(err);
+    });
+
+    child.on("close", (code) => {
+      clearTimeout(timer);
+      if (code !== 0) {
+        return reject(
+          new Error(`meal_plan.js failed (code ${code}): ${stderr}`),
+        );
+      }
+      resolve();
+    });
+  });
+};
+
+const readJsonSafe = (filePath) => {
+  const raw = fs.readFileSync(filePath, "utf-8");
+  return JSON.parse(raw);
+};
+
+const loadDiningMenuPreferFresh = async () => {
+  try {
+    // 1) try generating fresh menu
+    await runMealPlanScript();
+
+    // 2) read generated output
+    const generated = readJsonSafe(GENERATED_MENU_PATH);
+
+    // 3) very light sanity check
+    if (!generated || typeof generated !== "object") {
+      throw new Error("Generated menu JSON is not an object");
+    }
+
+    return generated;
+  } catch (err) {
+    // 4) fallback
+    console.warn(
+      "[MealPlan] Using fallback dining_hall_menu.json:",
+      err.message,
+    );
+    return readJsonSafe(FALLBACK_MENU_PATH);
+  }
+};
+
 const createMealPlan = (studentId, height_cm, weight_kg) => {
   return new Promise((resolve, reject) => {
-    try {
-      // 1️⃣ Tính BMI + calories
-      const { bmi, dailyCalories } = calculateCalories(height_cm, weight_kg);
+    (async () => {
+      try {
+        // 1️⃣ Tính BMI + calories
+        const { bmi, dailyCalories } = calculateCalories(height_cm, weight_kg);
 
-      // 2️⃣ Load menu
-      const menuPath = path.join(__dirname, "../data/dining_hall_menu.json");
-      const menuData = JSON.parse(fs.readFileSync(menuPath, "utf-8"));
+        // 2️⃣ Load menu (NEW: prefer fresh, fallback automatically)
+        const menuData = await loadDiningMenuPreferFresh();
 
-      // 3️⃣ Build prompt (ĐÚNG KEY)
-      const prompt = buildMealPlanPrompt({
-        BMI: bmi,
-        CALORIES: dailyCalories,
-        MENU: menuData,
-      });
+        // 3️⃣ Build prompt (ĐÚNG KEY)
+        const prompt = buildMealPlanPrompt({
+          BMI: bmi,
+          CALORIES: dailyCalories,
+          MENU: menuData,
+        });
 
-      // 4️⃣ Spawn Ollama
-      const child = spawn("ollama", ["run", "llama3.2"], {
-        stdio: ["pipe", "pipe", "pipe"],
-      });
+        // 4️⃣ Spawn Ollama
+        const child = spawn("ollama", ["run", "llama3.2"], {
+          stdio: ["pipe", "pipe", "pipe"],
+        });
 
-      let output = "";
-      let errorOutput = "";
+        let output = "";
+        let errorOutput = "";
 
-      child.stdout.on("data", (data) => {
-        output += data.toString();
-      });
+        child.stdout.on("data", (data) => {
+          output += data.toString();
+        });
 
-      child.stderr.on("data", (data) => {
-        errorOutput += data.toString();
-      });
+        child.stderr.on("data", (data) => {
+          errorOutput += data.toString();
+        });
 
-      child.on("close", async (code) => {
-        if (code !== 0) {
-          return reject(new Error("Ollama error: " + errorOutput));
-        }
-
-        try {
-          // 5️⃣ Làm sạch output (rất quan trọng)
-          const jsonStart = output.indexOf("{");
-          const jsonEnd = output.lastIndexOf("}");
-          const cleanJson = output.substring(jsonStart, jsonEnd + 1);
-
-          const mealPlan = JSON.parse(cleanJson);
-
-          // 6️⃣ Validate structure
-          for (const day of DAYS) {
-            if (
-              !mealPlan[day] ||
-              !mealPlan[day].Breakfast ||
-              !mealPlan[day].Lunch ||
-              !mealPlan[day].Dinner
-            ) {
-              throw new Error(`Invalid meal plan structure at ${day}`);
-            }
+        child.on("close", async (code) => {
+          if (code !== 0) {
+            return reject(new Error("Ollama error: " + errorOutput));
           }
 
-          // 7️⃣ Lưu Firebase
-          const weekStart = getWeekMondayISO();
+          try {
+            // 5️⃣ Làm sạch output (rất quan trọng)
+            const jsonStart = output.indexOf("{");
+            const jsonEnd = output.lastIndexOf("}");
+            const cleanJson = output.substring(jsonStart, jsonEnd + 1);
 
-          await mealPlanRef
-            .child(studentId)
-            .child(`weekOf_${weekStart}`)
-            .update({
-              bmi,
-              dailyCalories,
-              createdAt: Date.now(),
-              meals: mealPlan,
-            });
+            const mealPlan = JSON.parse(cleanJson);
 
-          resolve(mealPlan);
-        } catch (err) {
-          reject(err);
-        }
-      });
+            // 6️⃣ Validate structure
+            for (const day of DAYS) {
+              if (
+                !mealPlan[day] ||
+                !mealPlan[day].Breakfast ||
+                !mealPlan[day].Lunch ||
+                !mealPlan[day].Dinner
+              ) {
+                throw new Error(`Invalid meal plan structure at ${day}`);
+              }
+            }
 
-      child.stdin.write(prompt);
-      child.stdin.end();
-    } catch (err) {
-      reject(err);
-    }
+            // 7️⃣ Lưu Firebase
+            const weekStart = getWeekMondayISO();
+
+            await mealPlanRef
+              .child(studentId)
+              .child(`weekOf_${weekStart}`)
+              .update({
+                bmi,
+                dailyCalories,
+                createdAt: Date.now(),
+                meals: mealPlan,
+              });
+
+            resolve(mealPlan);
+          } catch (err) {
+            reject(err);
+          }
+        });
+
+        child.stdin.write(prompt);
+        child.stdin.end();
+      } catch (err) {
+        reject(err);
+      }
+    })();
   });
 };
 
