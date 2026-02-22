@@ -40,4 +40,39 @@ class APIService {
         
         return response.data // MealPlan
     }
+    
+    func rateDish(studentId: String,
+                  weekStart: String,
+                  day: String,
+                  ratings: [String: [String: Int]]) async -> Bool {
+        
+        let url = URL(string: "\(baseURL)/rate-dish")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let body: [String: Any] = [
+            "student_id": studentId,
+            "week_start": weekStart,
+            "day": day,
+            "ratings": ratings
+        ]
+        
+        do {
+            let data = try JSONSerialization.data(withJSONObject: body, options: [])
+            request.httpBody = data
+            
+            let (_, response) = try await URLSession.shared.data(for: request)
+            if let httpResp = response as? HTTPURLResponse, httpResp.statusCode == 200 {
+                print("Rated dishes successfully on API")
+                return true
+            } else {
+                print("Failed API call for rating")
+                return false
+            }
+        } catch {
+            print("Error calling rate-dish API:", error)
+            return false
+        }
+    }
 }

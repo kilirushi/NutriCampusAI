@@ -17,6 +17,12 @@ const DAYS = [
   "Sunday"
 ];
 
+const MEAL_TIMES = {
+  Breakfast: { start: "01:00", end: "22:00" },
+  Lunch: { start: "01:00", end: "22:00" },
+  Dinner: { start: "11:00", end: "22:00" }
+};
+
 const MEALS = ["Breakfast","Lunch","Dinner"];
 
 const createMealPlan = (studentId, height_cm, weight_kg) => {
@@ -44,45 +50,43 @@ const createMealPlan = (studentId, height_cm, weight_kg) => {
       let output = "";
       let errorOutput = "";
 
-      child.stdout.on("data", (data) => {
-        output += data.toString();
-      });
-
-      child.stderr.on("data", (data) => {
-        errorOutput += data.toString();
-      });
+      child.stdout.on("data", (data) => output += data.toString());
+      child.stderr.on("data", (data) => errorOutput += data.toString());
 
       child.on("close", async (code) => {
-        if (code !== 0) {
-          return reject(new Error("Ollama error: " + errorOutput));
-        }
+        if (code !== 0) return reject(new Error("Ollama error: " + errorOutput));
 
         try {
-          // 5️⃣ Làm sạch output
+          // 5️⃣ Parse JSON
           const jsonStart = output.indexOf("{");
           const jsonEnd = output.lastIndexOf("}");
           const cleanJson = output.substring(jsonStart, jsonEnd + 1);
+          const rawPlan = JSON.parse(cleanJson);
 
-          const mealPlan = JSON.parse(cleanJson);
+          // 6️⃣ Build structured mealPlan
+          const mealPlan = { BMI: bmi };
 
-          // 6️⃣ Thêm BMI vào mealPlan
-          mealPlan.BMI = bmi;
-
-          // 7️⃣ Validate structure
           for (const day of DAYS) {
-            if (
-              !mealPlan[day] ||
-              !mealPlan[day].Breakfast ||
-              !mealPlan[day].Lunch ||
-              !mealPlan[day].Dinner
-            ) {
-              throw new Error(`Invalid meal plan structure at ${day}`);
+            if (!rawPlan[day]) throw new Error(`Missing day plan: ${day}`);
+
+            mealPlan[day] = {};
+
+            for (const mealName of MEALS) {
+              if (!rawPlan[day][mealName]) throw new Error(`Missing ${mealName} at ${day}`);
+
+              const dishes = Array.isArray(rawPlan[day][mealName])
+                ? rawPlan[day][mealName]
+                : rawPlan[day][mealName].dishes || [];
+
+              mealPlan[day][mealName] = {
+                dishes:dishes,
+                time: MEAL_TIMES[mealName]
+              };
             }
           }
-
-          // 8️⃣ Lưu Firebase
+          
+          // 7️⃣ Lưu Firebase
           const weekStart = getWeekMondayISO();
-
           await mealPlanRef
             .child(studentId)
             .child(`weekOf_${weekStart}`)
@@ -93,7 +97,7 @@ const createMealPlan = (studentId, height_cm, weight_kg) => {
               meals: mealPlan
             });
 
-          // 9️⃣ Resolve mealPlan có BMI
+          // 8️⃣ Resolve mealPlan
           resolve(mealPlan);
         } catch (err) {
           reject(err);
