@@ -1,42 +1,42 @@
 {
   "Monday": {
-    "Breakfast": ["Pancakes", "Scrambled Eggs", "Oatmeal", "Fruit Cup","Apple","Banana"],
-    "Lunch": ["Spaghetti", "Grilled Chicken", "Caesar Salad", "Garlic Bread"],
+    "Breakfast": ["Herb Roasted Pork Loin", "Slow-roasted pork loin seasoned with thyme, sage and garlic", "Scrambled Eggs Eggs gently scrambled to fluffy perfection", "Steamed Green Peas","Tender steamed green peas seasoned with garlic and herbs","Crispy Okra"],
+    "Lunch": ["Bacon Pieces", "A Southwest spiced stew of ground beef, tomatoes, onion, green peppers, garlic and kidney beans", "Slow roasted to juicy perfection bone-in chicken, coated with salt, garlic, onion and paprika", "Spanish-style dish with yellow rice, tomato, peas, olives and plant-based chicken strips"],
     "Dinner": ["Beef Stir Fry", "Rice", "Broccoli", "Steamed Vegetables","Apple"]
   },
 
   "Tuesday": {
-    "Breakfast": ["Bagel", "Cream Cheese", "Banana", "Yogurt"],
-    "Lunch": ["Cheese Pizza", "Garden Salad", "Tomato Soup"],
+    "Breakfast": ["Sizzling hot golden brown pork sausage patty", "Golden brown savory turkey sausage link", "Hash Brown Potato Patty", "Crispy fried shredded potato patty"],
+    "Lunch": ["Steamed fresh broccoli florets", "Steamed carrot slices tossed with seasoning", "Long grain white rice seasoned with salt and pepper"],
     "Dinner": ["Chicken Alfredo", "Pasta", "Green Beans"]
   },
 
   "Wednesday": {
-    "Breakfast": ["French Toast", "Sausage", "Apple"],
-    "Lunch": ["Turkey Sandwich", "Chips", "Coleslaw"],
+    "Breakfast": ["Fresh mashed russet potatoes with milk, margarine, salt and pepper", "Homestyle grits", "Homestyle oatmeal cereal"],
+    "Lunch": ["Crispy Chicken Sandwich", "Gardenburger® black bean burger served hot-off-the-grill on a fresh, soft bun", "Grilled hot dog on a roll"],
     "Dinner": ["Tacos", "Black Beans", "Rice"]
   },
 
   "Thursday": {
-    "Breakfast": ["Omelette", "Toast", "Orange"],
+    "Breakfast": ["Eggs gently scrambled to fluffy perfection", "Tender steamed green peas seasoned with garlic and herbs", "Tender steamed green peas seasoned with garlic and herbs"],
     "Lunch": ["Burger", "Fries", "Side Salad"],
     "Dinner": ["Baked Chicken", "Mashed Potatoes", "Carrots"]
   },
 
   "Friday": {
-    "Breakfast": ["Cereal", "Milk", "Banana"],
+    "Breakfast": ["Crispy deep-fried breaded okra", "Sizzling hot golden brown pork sausage patty", "Golden brown savory turkey sausage link"],
     "Lunch": ["Pepperoni Pizza", "Caesar Salad"],
     "Dinner": ["Spaghetti", "Meatballs", "Garlic Bread"]
   },
 
   "Saturday": {
-    "Breakfast": ["Waffles", "Scrambled Eggs", "Fruit Cup"],
+    "Breakfast": ["Crispy fried shredded potato patty", "Scrambled Eggs", "Homestyle grits"],
     "Lunch": ["Chicken Wrap", "Chips", "Salad"],
     "Dinner": ["BBQ Chicken", "Corn", "Rice"]
   },
 
   "Sunday": {
-    "Breakfast": ["Pancakes", "Sausage", "Orange"],
+    "Breakfast": ["Homestyle oatmeal cereal", "Slow-roasted pork loin seasoned with thyme, sage and garlic", "Crispy deep-fried breaded okra"],
     "Lunch": ["Grilled Cheese", "Tomato Soup"],
     "Dinner": ["Roast Beef", "Potatoes", "Green Beans","Rice"]
   }
