@@ -1,0 +1,43 @@
+{
+  "Monday": {
+    "Breakfast": ["Pancakes", "Scrambled Eggs", "Oatmeal", "Fruit Cup","Apple","Banana"],
+    "Lunch": ["Spaghetti", "Grilled Chicken", "Caesar Salad", "Garlic Bread"],
+    "Dinner": ["Beef Stir Fry", "Rice", "Broccoli", "Steamed Vegetables","Apple"]
+  },
+
+  "Tuesday": {
+    "Breakfast": ["Bagel", "Cream Cheese", "Banana", "Yogurt"],
+    "Lunch": ["Cheese Pizza", "Garden Salad", "Tomato Soup"],
+    "Dinner": ["Chicken Alfredo", "Pasta", "Green Beans"]
+  },
+
+  "Wednesday": {
+    "Breakfast": ["French Toast", "Sausage", "Apple"],
+    "Lunch": ["Turkey Sandwich", "Chips", "Coleslaw"],
+    "Dinner": ["Tacos", "Black Beans", "Rice"]
+  },
+
+  "Thursday": {
+    "Breakfast": ["Omelette", "Toast", "Orange"],
+    "Lunch": ["Burger", "Fries", "Side Salad"],
+    "Dinner": ["Baked Chicken", "Mashed Potatoes", "Carrots"]
+  },
+
+  "Friday": {
+    "Breakfast": ["Cereal", "Milk", "Banana"],
+    "Lunch": ["Pepperoni Pizza", "Caesar Salad"],
+    "Dinner": ["Spaghetti", "Meatballs", "Garlic Bread"]
+  },
+
+  "Saturday": {
+    "Breakfast": ["Waffles", "Scrambled Eggs", "Fruit Cup"],
+    "Lunch": ["Chicken Wrap", "Chips", "Salad"],
+    "Dinner": ["BBQ Chicken", "Corn", "Rice"]
+  },
+
+  "Sunday": {
+    "Breakfast": ["Pancakes", "Sausage", "Orange"],
+    "Lunch": ["Grilled Cheese", "Tomato Soup"],
+    "Dinner": ["Roast Beef", "Potatoes", "Green Beans","Rice"]
+  }
+}
