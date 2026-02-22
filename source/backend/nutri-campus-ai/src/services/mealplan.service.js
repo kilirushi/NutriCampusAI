@@ -101,10 +101,10 @@ const ensureDailyMenuFreshness = async () => {
 const loadDiningMenuPreferFresh = async () => {
   try {
     // Only regenerate once per day (and share the same promise across requests)
-    await ensureDailyMenuFreshness();
+    // await ensureDailyMenuFreshness();
 
     // Read generated menu
-    const generated = readJsonSafe(GENERATED_MENU_PATH);
+    const generated = readJsonSafe(FALLBACK_MENU_PATH);
 
     // quick sanity check
     if (!generated || typeof generated !== "object") {
@@ -131,13 +131,13 @@ const createMealPlan = (studentId, height_cm, weight_kg) => {
         // 2️⃣ Load menu (prefer fresh generated, fallback automatically)
         const menuData = await loadDiningMenuPreferFresh();
 
+
         // 3️⃣ Build prompt
         const prompt = buildMealPlanPrompt({
           BMI: bmi,
           CALORIES: dailyCalories,
           MENU: menuData,
         });
-
         // 4️⃣ Spawn Ollama
         const child = spawn("ollama", ["run", "llama3.2"], {
           stdio: ["pipe", "pipe", "pipe"],
@@ -158,7 +158,9 @@ const createMealPlan = (studentId, height_cm, weight_kg) => {
             const jsonStart = output.indexOf("{");
             const jsonEnd = output.lastIndexOf("}");
             const cleanJson = output.substring(jsonStart, jsonEnd + 1);
+
             const rawPlan = JSON.parse(cleanJson);
+
 
             // 6️⃣ Build structured mealPlan
             const mealPlan = { BMI: bmi };
