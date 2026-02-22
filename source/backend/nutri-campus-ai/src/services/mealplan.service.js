@@ -131,7 +131,6 @@ const createMealPlan = (studentId, height_cm, weight_kg) => {
         // 2️⃣ Load menu (prefer fresh generated, fallback automatically)
         const menuData = await loadDiningMenuPreferFresh();
 
-
         // 3️⃣ Build prompt
         const prompt = buildMealPlanPrompt({
           BMI: bmi,
@@ -160,7 +159,6 @@ const createMealPlan = (studentId, height_cm, weight_kg) => {
             const cleanJson = output.substring(jsonStart, jsonEnd + 1);
 
             const rawPlan = JSON.parse(cleanJson);
-
 
             // 6️⃣ Build structured mealPlan
             const mealPlan = { BMI: bmi };
@@ -349,7 +347,7 @@ const getDislikedDishes = async () => {
 };
 
 const getTopDishesWeek = async () => {
-    const weekStart = getWeekMondayISO();
+  const weekStart = getWeekMondayISO();
   const snapshot = await dishStatistics
     .child(`weekly/weekOf_${weekStart}`)
     .once("value");
@@ -405,5 +403,5 @@ module.exports = {
   getTopDishes,
   getDislikedDishes,
   getDislikedDishesWeek,
-  getDislikedDishesWeek
+  getTopDishesWeek,
 };

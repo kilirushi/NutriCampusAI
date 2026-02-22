@@ -22,11 +22,11 @@ function showView(which) {
 
   if (which === "rates") {
     viewRates.classList.add("is-active");
-    pageTitle.textContent = "Rates";
+    pageTitle.textContent = "Rates Weekly";
     setActiveLink(navRates);
   } else {
     viewHome.classList.add("is-active");
-    pageTitle.textContent = "Admin Dashboard";
+    pageTitle.textContent = "Rates All Time";
     setActiveLink(navMealPlans);
   }
 }

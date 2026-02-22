@@ -14,10 +14,10 @@
 
         <nav class="side-nav" aria-label="Sidebar navigation">
           <a class="side-link is-active" href="#" id="nav-mealplans"
-            >Meal Plans</a
+            >Rate All Time</a
           >
-          <a class="side-link" href="#" id="nav-rates">Rates</a>
-          <a class="side-link" href="#" id="nav-reports">Reports</a>
+          <a class="side-link" href="#" id="nav-rates">Rate Weekly</a>
+          <!-- <a class="side-link" href="#" id="nav-reports">Reports</a> -->
         </nav>
       </aside>
 
@@ -25,35 +25,125 @@
       <main class="main">
         <!-- Top bar -->
         <header class="topbar">
-          <div class="page-title" id="pageTitle">Admin Dashboard</div>
+          <div class="page-title" id="pageTitle">Rate All Time</div>
           <div class="welcome">Welcome, Admin</div>
         </header>
 
         <!-- Cards area -->
         <section class="stats" aria-label="Dashboard cards">
+          <% const mealOrder = ["Breakfast", "Lunch", "Dinner"]; %>
+
           <!-- HOME / MEAL PLANS VIEW -->
           <div class="view is-active" id="view-home">
-            <article class="card">
-              <h3>Total Users</h3>
-              <div class="value">&lt;%= totalUsers %&gt;</div>
+            <article class="card dish-card">
+              <h3>Top Dishes (All Time)</h3>
+              <% if (!topDishes) { %>
+              <p class="empty">No rating data yet.</p>
+              <% } else { %>
+              <% mealOrder.forEach((meal) => { const dishes = topDishes[meal] || []; %>
+              <div class="meal-group">
+                <h4><%= meal %></h4>
+                <% if (!dishes.length) { %>
+                <p class="empty">No dishes.</p>
+                <% } else { %>
+                <ul class="dish-list">
+                  <% dishes.forEach((dish) => { %>
+                  <li>
+                    <span class="dish-name">[⭐ <%= dish.average %>] <%= dish.dish %></span>
+                    <span class="dish-meta"
+                      >Votes <%= dish.totalVotes %></span
+                    >
+                  </li>
+                  <% }) %>
+                </ul>
+                <% } %>
+              </div>
+              <% }) %>
+              <% } %>
             </article>
 
-            <article class="card">
-              <h3>Total Meal Plans</h3>
-              <div class="value">&lt;%= totalPlans %&gt;</div>
+            <article class="card dish-card">
+              <h3>Disliked Dishes (All Time)</h3>
+              <% if (!bottomDishes) { %>
+              <p class="empty">No rating data yet.</p>
+              <% } else { %>
+              <% mealOrder.forEach((meal) => { const dishes = bottomDishes[meal] || []; %>
+              <div class="meal-group">
+                <h4><%= meal %></h4>
+                <% if (!dishes.length) { %>
+                <p class="empty">No dishes.</p>
+                <% } else { %>
+                <ul class="dish-list">
+                  <% dishes.forEach((dish) => { %>
+                  <li>
+                    <span class="dish-name">[⭐ <%= dish.average %>] <%= dish.dish %></span>
+                    <span class="dish-meta"
+                      >Votes <%= dish.totalVotes %></span
+                    >
+                  </li>
+                  <% }) %>
+                </ul>
+                <% } %>
+              </div>
+              <% }) %>
+              <% } %>
             </article>
           </div>
 
           <!-- RATES VIEW -->
           <div class="view" id="view-rates">
-            <article class="card">
-              <h3>Today Rating</h3>
-              <div class="value">&lt;%= todayRating %&gt;</div>
+            <article class="card dish-card">
+              <h3>Top Dishes (This Week)</h3>
+              <% if (!topDishesWeekly) { %>
+              <p class="empty">No weekly rating data yet.</p>
+              <% } else { %>
+              <% mealOrder.forEach((meal) => { const dishes = topDishesWeekly[meal] || []; %>
+              <div class="meal-group">
+                <h4><%= meal %></h4>
+                <% if (!dishes.length) { %>
+                <p class="empty">No dishes.</p>
+                <% } else { %>
+                <ul class="dish-list">
+                  <% dishes.forEach((dish) => { %>
+                  <li>
+                    <span class="dish-name">[⭐ <%= dish.average %>] <%= dish.dish %></span>
+                    <span class="dish-meta"
+                      >Votes <%= dish.totalVotes %></span
+                    >
+                  </li>
+                  <% }) %>
+                </ul>
+                <% } %>
+              </div>
+              <% }) %>
+              <% } %>
             </article>
 
-            <article class="card">
-              <h3>All-Time Rating</h3>
-              <div class="value">&lt;%= allTimeRating %&gt;</div>
+            <article class="card dish-card">
+              <h3>Disliked Dishes (This Week)</h3>
+              <% if (!bottomDishesWeekly) { %>
+              <p class="empty">No weekly rating data yet.</p>
+              <% } else { %>
+              <% mealOrder.forEach((meal) => { const dishes = bottomDishesWeekly[meal] || []; %>
+              <div class="meal-group">
+                <h4><%= meal %></h4>
+                <% if (!dishes.length) { %>
+                <p class="empty">No dishes.</p>
+                <% } else { %>
+                <ul class="dish-list">
+                  <% dishes.forEach((dish) => { %>
+                  <li>
+                    <span class="dish-name">[⭐ <%= dish.average %>] <%= dish.dish %></span>
+                    <span class="dish-meta"
+                      >Votes <%= dish.totalVotes %></span
+                    >
+                  </li>
+                  <% }) %>
+                </ul>
+                <% } %>
+              </div>
+              <% }) %>
+              <% } %>
             </article>
           </div>
         </section>
