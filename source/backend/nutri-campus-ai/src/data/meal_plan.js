@@ -1,4 +1,4 @@
-// meal-plan.js
+// meal_plan.js
 // Node 18+ (built-in fetch)
 const fs = require("fs/promises");
 const path = require("path");
