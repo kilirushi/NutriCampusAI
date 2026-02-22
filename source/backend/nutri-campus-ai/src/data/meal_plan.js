@@ -5,7 +5,7 @@ const path = require("path");
 
 const BASE =
   "https://api.elevate-dxp.com/api/mesh/c087f756-cc72-4649-a36f-3a41b700c519/graphql";
-const OUTPUT_PATH = path.join(__dirname, "dining_hall.json");
+const OUTPUT_PATH = path.join(__dirname, "..", "data", "dining_hall.json");
 
 const HEADERS = {
   accept: "*/*",
@@ -50,6 +50,57 @@ query getLocationRecipes($campusUrlKey:String!,$locationUrlKey:String!,$date:Str
   }
 }
 `.trim();
+
+const STOP_WORDS = [
+  "ketchup",
+  "mustard",
+  "mayonnaise",
+  "mayo",
+  "salt",
+  "pepper",
+  "sugar",
+  "water",
+  "ice",
+  "lemon",
+  "lime",
+  "hot sauce",
+  "sriracha",
+  "tabasco",
+  "soy sauce",
+  "vinegar",
+  "ranch",
+  "italian dressing",
+  "vinaigrette",
+  "dressing",
+  "napkin",
+  "utensil",
+  "fork",
+  "spoon",
+  "knife",
+  "seeds",
+  "beans",
+  "dressing",
+  "orange",
+  "pineapple",
+  "apple",
+  "milk",
+];
+
+function isUnimportant(name) {
+  const n = name.toLowerCase().trim();
+
+  // exact match
+  if (STOP_WORDS.includes(n)) return true;
+
+  // contains match (good for "Ketchup Packet", "Ice Water", etc.)
+  if (STOP_WORDS.some((w) => n.includes(w))) return true;
+
+  return false;
+}
+
+function filterMenuItems(names) {
+  return names.filter((n) => n && !isUnimportant(n));
+}
 
 // ---- YOU MUST SET THESE (see getMealPeriods below) ----
 const MEAL_PERIODS = {
@@ -202,7 +253,7 @@ async function build7Days(startDate) {
       const glr = await fetchLocationRecipes(dateStr, mp);
       const skuToName = skuNameMap(glr);
       const menuSkus = extractMenuSkus(glr);
-      weekly[dn][mealName] = resolveNames(menuSkus, skuToName);
+      weekly[dn][mealName] = filterMenuItems(resolveNames(menuSkus, skuToName));
     }
   }
 
