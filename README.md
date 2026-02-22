@@ -1,6 +1,5 @@
 # 🌱 NutriCampusAI
 
-![Project Logo](./assets/logo.png)  
 *An AI-assisted meal recommendation app for campus students based on BMI and food preferences.*
 
 ---
