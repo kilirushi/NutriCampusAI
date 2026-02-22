@@ -26,6 +26,7 @@ const FALLBACK_MENU_PATH = path.join(
 );
 const GENERATED_MENU_PATH = path.join(__dirname, "../data/dining_hall.json");
 const MEAL_PLAN_SCRIPT_PATH = path.join(__dirname, "../data/meal_plan.js");
+let dailyRefreshPromise = null;
 
 const runMealPlanScript = (timeoutMs = 45000) => {
   return new Promise((resolve, reject) => {
@@ -65,22 +66,48 @@ const readJsonSafe = (filePath) => {
   return JSON.parse(raw);
 };
 
+const isSameLocalDate = (a, b) => {
+  return (
+    a.getFullYear() === b.getFullYear() &&
+    a.getMonth() === b.getMonth() &&
+    a.getDate() === b.getDate()
+  );
+};
+
+const shouldRunMealPlanToday = () => {
+  if (!fs.existsSync(GENERATED_MENU_PATH)) return true;
+  const stats = fs.statSync(GENERATED_MENU_PATH);
+  return !isSameLocalDate(stats.mtime, new Date());
+};
+
+const ensureDailyMenuFreshness = async () => {
+  if (!shouldRunMealPlanToday()) return;
+
+  if (!dailyRefreshPromise) {
+    dailyRefreshPromise = runMealPlanScript().finally(() => {
+      dailyRefreshPromise = null;
+    });
+  }
+
+  await dailyRefreshPromise;
+};
+
 const loadDiningMenuPreferFresh = async () => {
   try {
-    // 1) try generating fresh menu
-    await runMealPlanScript();
+    // Regenerate menu at most once per local day.
+    await ensureDailyMenuFreshness();
 
-    // 2) read generated output
+    // Read generated output.
     const generated = readJsonSafe(GENERATED_MENU_PATH);
 
-    // 3) very light sanity check
+    // Very light sanity check.
     if (!generated || typeof generated !== "object") {
       throw new Error("Generated menu JSON is not an object");
     }
 
     return generated;
   } catch (err) {
-    // 4) fallback
+    // Fallback.
     console.warn(
       "[MealPlan] Using fallback dining_hall_menu.json:",
       err.message,

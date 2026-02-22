@@ -1,9 +1,11 @@
 // meal-plan.js
 // Node 18+ (built-in fetch)
 const fs = require("fs/promises");
+const path = require("path");
 
 const BASE =
   "https://api.elevate-dxp.com/api/mesh/c087f756-cc72-4649-a36f-3a41b700c519/graphql";
+const OUTPUT_PATH = path.join(__dirname, "dining_hall.json");
 
 const HEADERS = {
   accept: "*/*",
@@ -258,8 +260,8 @@ async function getMealPeriods() {
     // Convert to formatted JSON string
     const output = JSON.stringify(weekly, null, 2);
 
-    // Write to text file
-    await fs.writeFile("dining_hall.json", output, "utf8");
+    // Write to src/data/dining_hall.json so the service reads the same file.
+    await fs.writeFile(OUTPUT_PATH, output, "utf8");
 
     console.log("Saved to dining_hall.json successfully.");
   } catch (err) {
