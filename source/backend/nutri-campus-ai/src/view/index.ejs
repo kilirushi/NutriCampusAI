@@ -4,8 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    helolo
+    <div class="sidebar">
+    <h2>NutriCampusAI</h2>
+    <a href="index.html">Meal Plans</a>
+    <a href="index.htm">Ratings</a>
+    <a href="index.htm">Reports</a>
+</div>
+
+<div class="main">
+
+    <div class="navbar">
+        <div><strong>Admin Dashboard</strong></div>
+        <div>Welcome, Admin</div>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Total Users</h3>
+            <p>&lt;%= totalUsers %&gt;></p>
+        </div>
+
+        <div class="card">
+            <h3>Total Meal Plans</h3>
+            <p>&lt;%= totalPlans %&gt;</p>
+        </div>
+
+        <div class="card">
+            <h3>Active Today</h3>
+            <p>&lt;%= activeUsers %&gt;</p>
+        </div>
+    </div>
+
+    <h2>Recent Users</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+        </tr>
+
+        <!-- <% users.forEach(user => { %>
+            <tr>
+                <td>user name</td>
+                <td>user email</td>
+                <td>user role</td>
+            </tr>
+        <% }) %> -->
+
+    </table>
+
+</div>
+
 </body>
 </html>
