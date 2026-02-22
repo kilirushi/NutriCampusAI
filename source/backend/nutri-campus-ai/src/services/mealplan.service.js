@@ -3,7 +3,7 @@ const path = require("path");
 const { spawn } = require("child_process");
 
 const buildMealPlanPrompt = require("../prompts/mealplan.prompt");
-const { mealPlanRef,dishStatistics } = require("../models/mealplan.model");
+const { mealPlanRef, dishStatistics } = require("../models/mealplan.model");
 const { calculateCalories } = require("../utils/calorie.util");
 const { getWeekMondayISO } = require("../utils/date.util");
 
@@ -14,101 +14,201 @@ const DAYS = [
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday"
+  "Sunday",
 ];
 
 const MEAL_TIMES = {
   Breakfast: { start: "01:00", end: "22:00" },
   Lunch: { start: "01:00", end: "22:00" },
-  Dinner: { start: "11:00", end: "22:00" }
+  Dinner: { start: "11:00", end: "22:00" },
 };
 
-const MEALS = ["Breakfast","Lunch","Dinner"];
+const MEALS = ["Breakfast", "Lunch", "Dinner"];
+
+// NEW
+const FALLBACK_MENU_PATH = path.join(
+  __dirname,
+  "../data/dining_hall_menu.json",
+);
+const GENERATED_MENU_PATH = path.join(__dirname, "../data/dining_hall.json");
+const MEAL_PLAN_SCRIPT_PATH = path.join(__dirname, "../data/meal_plan.js");
+let dailyRefreshPromise = null;
+
+const runMealPlanScript = (timeoutMs = 45000) => {
+  return new Promise((resolve, reject) => {
+    // Use "node" on Windows; use process.execPath to be safe
+    const child = spawn(process.execPath, [MEAL_PLAN_SCRIPT_PATH], {
+      stdio: ["ignore", "pipe", "pipe"],
+      windowsHide: true,
+    });
+
+    let stderr = "";
+    child.stderr.on("data", (d) => (stderr += d.toString()));
+
+    const timer = setTimeout(() => {
+      child.kill("SIGKILL");
+      reject(new Error(`meal_plan.js timed out after ${timeoutMs}ms`));
+    }, timeoutMs);
+
+    child.on("error", (err) => {
+      clearTimeout(timer);
+      reject(err);
+    });
+
+    child.on("close", (code) => {
+      clearTimeout(timer);
+      if (code !== 0) {
+        return reject(
+          new Error(`meal_plan.js failed (code ${code}): ${stderr}`),
+        );
+      }
+      resolve();
+    });
+  });
+};
+
+const readJsonSafe = (filePath) => {
+  const raw = fs.readFileSync(filePath, "utf-8");
+  return JSON.parse(raw);
+};
+
+const isSameLocalDate = (a, b) => {
+  return (
+    a.getFullYear() === b.getFullYear() &&
+    a.getMonth() === b.getMonth() &&
+    a.getDate() === b.getDate()
+  );
+};
+
+const shouldRunMealPlanToday = () => {
+  if (!fs.existsSync(GENERATED_MENU_PATH)) return true;
+  const stats = fs.statSync(GENERATED_MENU_PATH);
+  return !isSameLocalDate(stats.mtime, new Date());
+};
+
+const ensureDailyMenuFreshness = async () => {
+  if (!shouldRunMealPlanToday()) return;
+
+  if (!dailyRefreshPromise) {
+    dailyRefreshPromise = runMealPlanScript().finally(() => {
+      dailyRefreshPromise = null;
+    });
+  }
+
+  await dailyRefreshPromise;
+};
+
+const loadDiningMenuPreferFresh = async () => {
+  try {
+    // Regenerate menu at most once per local day.
+    await ensureDailyMenuFreshness();
+
+    // Read generated output.
+    const generated = readJsonSafe(GENERATED_MENU_PATH);
+
+    // Very light sanity check.
+    if (!generated || typeof generated !== "object") {
+      throw new Error("Generated menu JSON is not an object");
+    }
+
+    return generated;
+  } catch (err) {
+    // Fallback.
+    console.warn(
+      "[MealPlan] Using fallback dining_hall_menu.json:",
+      err.message,
+    );
+    return readJsonSafe(FALLBACK_MENU_PATH);
+  }
+};
 
 const createMealPlan = (studentId, height_cm, weight_kg) => {
   return new Promise((resolve, reject) => {
-    try {
-      // 1️⃣ Tính BMI + calories
-      const { bmi, dailyCalories } = calculateCalories(height_cm, weight_kg);
+    (async () => {
+      try {
+        // 1️⃣ Tính BMI + calories
+        const { bmi, dailyCalories } = calculateCalories(height_cm, weight_kg);
 
-      // 2️⃣ Load menu
-      const menuPath = path.join(__dirname, "../data/dining_hall_menu.json");
-      const menuData = JSON.parse(fs.readFileSync(menuPath, "utf-8"));
+        // 2️⃣ Load menu (NEW: prefer fresh, fallback automatically)
+        const menuData = await loadDiningMenuPreferFresh();
 
-      // 3️⃣ Build prompt
-      const prompt = buildMealPlanPrompt({
-        BMI: bmi,
-        CALORIES: dailyCalories,
-        MENU: menuData
-      });
+        // 3️⃣ Build prompt
+        const prompt = buildMealPlanPrompt({
+          BMI: bmi,
+          CALORIES: dailyCalories,
+          MENU: menuData,
+        });
 
-      // 4️⃣ Spawn Ollama
-      const child = spawn("ollama", ["run", "llama3.2"], {
-        stdio: ["pipe", "pipe", "pipe"]
-      });
+        // 4️⃣ Spawn Ollama
+        const child = spawn("ollama", ["run", "llama3.2"], {
+          stdio: ["pipe", "pipe", "pipe"],
+        });
 
-      let output = "";
-      let errorOutput = "";
+        let output = "";
+        let errorOutput = "";
 
-      child.stdout.on("data", (data) => output += data.toString());
-      child.stderr.on("data", (data) => errorOutput += data.toString());
+        child.stdout.on("data", (data) => (output += data.toString()));
+        child.stderr.on("data", (data) => (errorOutput += data.toString()));
 
-      child.on("close", async (code) => {
-        if (code !== 0) return reject(new Error("Ollama error: " + errorOutput));
+        child.on("close", async (code) => {
+          if (code !== 0)
+            return reject(new Error("Ollama error: " + errorOutput));
 
-        try {
-          // 5️⃣ Parse JSON
-          const jsonStart = output.indexOf("{");
-          const jsonEnd = output.lastIndexOf("}");
-          const cleanJson = output.substring(jsonStart, jsonEnd + 1);
-          const rawPlan = JSON.parse(cleanJson);
+          try {
+            // 5️⃣ Parse JSON
+            const jsonStart = output.indexOf("{");
+            const jsonEnd = output.lastIndexOf("}");
+            const cleanJson = output.substring(jsonStart, jsonEnd + 1);
+            const rawPlan = JSON.parse(cleanJson);
 
-          // 6️⃣ Build structured mealPlan
-          const mealPlan = { BMI: bmi };
+            // 6️⃣ Build structured mealPlan
+            const mealPlan = { BMI: bmi };
 
-          for (const day of DAYS) {
-            if (!rawPlan[day]) throw new Error(`Missing day plan: ${day}`);
+            for (const day of DAYS) {
+              if (!rawPlan[day]) throw new Error(`Missing day plan: ${day}`);
 
-            mealPlan[day] = {};
+              mealPlan[day] = {};
 
-            for (const mealName of MEALS) {
-              if (!rawPlan[day][mealName]) throw new Error(`Missing ${mealName} at ${day}`);
+              for (const mealName of MEALS) {
+                if (!rawPlan[day][mealName])
+                  throw new Error(`Missing ${mealName} at ${day}`);
 
-              const dishes = Array.isArray(rawPlan[day][mealName])
-                ? rawPlan[day][mealName]
-                : rawPlan[day][mealName].dishes || [];
+                const dishes = Array.isArray(rawPlan[day][mealName])
+                  ? rawPlan[day][mealName]
+                  : rawPlan[day][mealName].dishes || [];
 
-              mealPlan[day][mealName] = {
-                dishes:dishes,
-                time: MEAL_TIMES[mealName]
-              };
+                mealPlan[day][mealName] = {
+                  dishes: dishes,
+                  time: MEAL_TIMES[mealName],
+                };
+              }
             }
+
+            // 7️⃣ Lưu Firebase
+            const weekStart = getWeekMondayISO();
+            await mealPlanRef
+              .child(studentId)
+              .child(`weekOf_${weekStart}`)
+              .update({
+                bmi,
+                dailyCalories,
+                createdAt: Date.now(),
+                meals: mealPlan,
+              });
+
+            // 8️⃣ Resolve mealPlan
+            resolve(mealPlan);
+          } catch (err) {
+            reject(err);
           }
-          
-          // 7️⃣ Lưu Firebase
-          const weekStart = getWeekMondayISO();
-          await mealPlanRef
-            .child(studentId)
-            .child(`weekOf_${weekStart}`)
-            .update({
-              bmi,
-              dailyCalories,
-              createdAt: Date.now(),
-              meals: mealPlan
-            });
+        });
 
-          // 8️⃣ Resolve mealPlan
-          resolve(mealPlan);
-        } catch (err) {
-          reject(err);
-        }
-      });
-
-      child.stdin.write(prompt);
-      child.stdin.end();
-    } catch (err) {
-      reject(err);
-    }
+        child.stdin.write(prompt);
+        child.stdin.end();
+      } catch (err) {
+        reject(err);
+      }
+    })();
   });
 };
 
@@ -133,7 +233,6 @@ const saveDishRatings = async (studentId, weekStart, day, ratings) => {
 
   for (const meal of Object.keys(ratings)) {
     for (const dish of Object.keys(ratings[meal])) {
-
       const newScore = ratings[meal][dish];
       const oldScore = existingRatings?.[meal]?.[dish] ?? null;
 
@@ -143,8 +242,8 @@ const saveDishRatings = async (studentId, weekStart, day, ratings) => {
           dish,
           newScore,
           oldScore,
-          weekStart
-        })
+          weekStart,
+        }),
       );
     }
   }
@@ -154,33 +253,31 @@ const saveDishRatings = async (studentId, weekStart, day, ratings) => {
 
   await ratingDayRef.set({
     ...ratings,
-    updatedAt: Date.now()
+    updatedAt: Date.now(),
   });
 
   return { success: true };
 };
-
-
 
 const updateDishStatistics = async ({
   meal,
   dish,
   newScore,
   oldScore,
-  weekStart
+  weekStart,
 }) => {
-
   const globalRef = dishStatistics.child(`global/${meal}/${dish}`);
-  const weeklyRef = dishStatistics.child(`weekly/weekOf_${weekStart}/${meal}/${dish}`);
+  const weeklyRef = dishStatistics.child(
+    `weekly/weekOf_${weekStart}/${meal}/${dish}`,
+  );
 
   const updateLogic = async (ref) => {
     await ref.transaction((data) => {
-
       if (!data) {
         return {
           totalScore: newScore,
           totalCount: 1,
-          average: newScore
+          average: newScore,
         };
       }
 
@@ -199,17 +296,13 @@ const updateDishStatistics = async ({
       return {
         totalScore,
         totalCount,
-        average: parseFloat((totalScore / totalCount).toFixed(2))
+        average: parseFloat((totalScore / totalCount).toFixed(2)),
       };
     });
   };
 
-  await Promise.all([
-    updateLogic(globalRef),
-    updateLogic(weeklyRef)
-  ]);
+  await Promise.all([updateLogic(globalRef), updateLogic(weeklyRef)]);
 };
-
 
 const getTopDishes = async () => {
   const snapshot = await dishStatistics.child("global").once("value");
@@ -220,13 +313,13 @@ const getTopDishes = async () => {
 
   for (const meal of Object.keys(stats)) {
     const dishes = Object.entries(stats[meal])
-      .filter(([_, data]) => data.average > 3)   // 🔥 điều kiện > 3
+      .filter(([_, data]) => data.average > 3) // 🔥 điều kiện > 3
       .sort((a, b) => a[1].average - b[1].average); // 🔥 sort tăng dần (tệ nhất lên trước)
 
     result[meal] = dishes.map(([dish, data]) => ({
       dish,
       average: data.average,
-      totalVotes: data.totalCount
+      totalVotes: data.totalCount,
     }));
   }
 
@@ -234,7 +327,9 @@ const getTopDishes = async () => {
 };
 
 const getDislikedDishes = async (weekStart) => {
-  const snapshot = await dishStatistics.child(`weekly/weekOf_${weekStart}`).once("value");
+  const snapshot = await dishStatistics
+    .child(`weekly/weekOf_${weekStart}`)
+    .once("value");
   const stats = snapshot.val();
   if (!stats) return null;
 
@@ -242,23 +337,22 @@ const getDislikedDishes = async (weekStart) => {
 
   for (const meal of Object.keys(stats)) {
     const dishes = Object.entries(stats[meal])
-      .filter(([_, data]) => data.average < 3)   // 🔥 điều kiện < 3
+      .filter(([_, data]) => data.average < 3) // 🔥 điều kiện < 3
       .sort((a, b) => a[1].average - b[1].average); // 🔥 sort tăng dần (tệ nhất lên trước)
 
     result[meal] = dishes.map(([dish, data]) => ({
       dish,
       average: data.average,
-      totalVotes: data.totalCount
+      totalVotes: data.totalCount,
     }));
   }
 
   return result;
 };
 
-
 module.exports = {
   createMealPlan,
   saveDishRatings,
   getTopDishes,
-  getDislikedDishes
+  getDislikedDishes,
 };
