@@ -1,1429 +1,2762 @@
 {
   "Sunday": {
     "Breakfast": [
-      "Herb Roasted Pork Loin",
-      "Scrambled Eggs",
-      "Steamed Green Peas",
-      "Crispy Okra",
-      "Pork Sausage Patty",
-      "Turkey Sausage Link",
-      "Hash Brown Potato Patty",
-      "Old-Fashioned Mashed Potatoes",
-      "Grits",
-      "Old Fashioned Oatmeal",
-      "BBQ Jackfruit",
-      "Classic Cheese Pizza",
-      "Meatball Pizza",
-      "Grilled Black Bean Burger",
-      "Classic Hot Dog",
-      "Crispy Chicken Sandwich",
-      "Fresh Cut French Fries UNCP",
-      "American Cheese",
-      "Lettuce",
-      "Signature Chips",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Creamy Tuna Salad",
-      "Ham",
-      "Provolone Cheese",
-      "Swiss Cheese",
-      "Turkey Breast",
-      "Green Leaf Lettuce",
-      "Bagel",
-      "Chive Cream Cheese",
-      "Citrus Honey Butter",
-      "Grape Jelly",
-      "Nutella®",
-      "Peanut Butter",
-      "Strawberry Cream Cheese",
-      "Whipped Butter",
-      "Whipped Cream Cheese",
-      "Devil's Food Cupcake",
-      "Oatmeal Raisin Cookie"
+      {
+        "name": "Herb Roasted Pork Loin",
+        "calories": 186
+      },
+      {
+        "name": "Scrambled Eggs",
+        "calories": 142
+      },
+      {
+        "name": "Steamed Green Peas",
+        "calories": 70
+      },
+      {
+        "name": "Crispy Okra",
+        "calories": 64
+      },
+      {
+        "name": "Pork Sausage Patty",
+        "calories": 180
+      },
+      {
+        "name": "Turkey Sausage Link",
+        "calories": 97
+      },
+      {
+        "name": "Hash Brown Potato Patty",
+        "calories": 101
+      },
+      {
+        "name": "Old-Fashioned Mashed Potatoes",
+        "calories": 111
+      },
+      {
+        "name": "Grits",
+        "calories": 90
+      },
+      {
+        "name": "Old Fashioned Oatmeal",
+        "calories": 106
+      },
+      {
+        "name": "Classic Cheese Pizza",
+        "calories": 269
+      },
+      {
+        "name": "Meatball Pizza",
+        "calories": 294
+      },
+      {
+        "name": "Grilled Black Bean Burger",
+        "calories": 257
+      },
+      {
+        "name": "Classic Hot Dog",
+        "calories": 304
+      },
+      {
+        "name": "Crispy Chicken Sandwich",
+        "calories": 379
+      },
+      {
+        "name": "Fresh Cut French Fries UNCP",
+        "calories": 151
+      },
+      {
+        "name": "Signature Chips",
+        "calories": 98
+      },
+      {
+        "name": "Flour Tortilla",
+        "calories": 211
+      },
+      {
+        "name": "Hoagie Roll",
+        "calories": 176
+      },
+      {
+        "name": "White Bread",
+        "calories": 129
+      },
+      {
+        "name": "Bagel",
+        "calories": 175
+      },
+      {
+        "name": "Devil's Food Cupcake",
+        "calories": 154
+      },
+      {
+        "name": "Oatmeal Raisin Cookie",
+        "calories": 115
+      }
     ],
     "Lunch": [
-      "Herb Roasted Pork Loin",
-      "Scrambled Eggs",
-      "Steamed Green Peas",
-      "Crispy Okra",
-      "Pork Sausage Patty",
-      "Turkey Sausage Link",
-      "Hash Brown Potato Patty",
-      "Old-Fashioned Mashed Potatoes",
-      "Grits",
-      "Old Fashioned Oatmeal",
-      "BBQ Jackfruit",
-      "Classic Cheese Pizza",
-      "Meatball Pizza",
-      "Grilled Black Bean Burger",
-      "Classic Hot Dog",
-      "Crispy Chicken Sandwich",
-      "Fresh Cut French Fries UNCP",
-      "American Cheese",
-      "Lettuce",
-      "Signature Chips",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Creamy Tuna Salad",
-      "Ham",
-      "Provolone Cheese",
-      "Swiss Cheese",
-      "Turkey Breast",
-      "Green Leaf Lettuce",
-      "Chili Con Carne",
-      "Bagel",
-      "Chive Cream Cheese",
-      "Citrus Honey Butter",
-      "Grape Jelly",
-      "Nutella®",
-      "Peanut Butter",
-      "Strawberry Cream Cheese",
-      "Whipped Butter",
-      "Whipped Cream Cheese",
-      "Devil's Food Cupcake",
-      "Oatmeal Raisin Cookie",
-      "Cinnamon-Honey Granola",
-      "Whipped Topping",
-      "Belgian Waffle Mix",
-      "Pancake Syrup",
-      "Bacon Pieces",
-      "Chopped Hard-Cooked Egg",
-      "Cucumbers",
-      "Grape Tomatoes",
-      "Romaine Lettuce",
-      "Spring Salad Mix",
-      "Shredded Cheddar Cheese",
-      "Shredded Carrots"
+      {
+        "name": "Herb Roasted Pork Loin",
+        "calories": 186
+      },
+      {
+        "name": "Scrambled Eggs",
+        "calories": 142
+      },
+      {
+        "name": "Steamed Green Peas",
+        "calories": 70
+      },
+      {
+        "name": "Crispy Okra",
+        "calories": 64
+      },
+      {
+        "name": "Pork Sausage Patty",
+        "calories": 180
+      },
+      {
+        "name": "Turkey Sausage Link",
+        "calories": 97
+      },
+      {
+        "name": "Hash Brown Potato Patty",
+        "calories": 101
+      },
+      {
+        "name": "Old-Fashioned Mashed Potatoes",
+        "calories": 111
+      },
+      {
+        "name": "Grits",
+        "calories": 90
+      },
+      {
+        "name": "Old Fashioned Oatmeal",
+        "calories": 106
+      },
+      {
+        "name": "Classic Cheese Pizza",
+        "calories": 269
+      },
+      {
+        "name": "Meatball Pizza",
+        "calories": 294
+      },
+      {
+        "name": "Grilled Black Bean Burger",
+        "calories": 257
+      },
+      {
+        "name": "Classic Hot Dog",
+        "calories": 304
+      },
+      {
+        "name": "Crispy Chicken Sandwich",
+        "calories": 379
+      },
+      {
+        "name": "Fresh Cut French Fries UNCP",
+        "calories": 151
+      },
+      {
+        "name": "Signature Chips",
+        "calories": 98
+      },
+      {
+        "name": "Flour Tortilla",
+        "calories": 211
+      },
+      {
+        "name": "Hoagie Roll",
+        "calories": 176
+      },
+      {
+        "name": "White Bread",
+        "calories": 129
+      },
+      {
+        "name": "Chili Con Carne",
+        "calories": 183
+      },
+      {
+        "name": "Bagel",
+        "calories": 175
+      },
+      {
+        "name": "Devil's Food Cupcake",
+        "calories": 154
+      },
+      {
+        "name": "Oatmeal Raisin Cookie",
+        "calories": 115
+      },
+      {
+        "name": "Cinnamon-Honey Granola",
+        "calories": 1792
+      },
+      {
+        "name": "Whipped Topping",
+        "calories": 107
+      },
+      {
+        "name": "Belgian Waffle Mix",
+        "calories": 452
+      },
+      {
+        "name": "Bacon Pieces",
+        "calories": 72
+      },
+      {
+        "name": "Chopped Hard-Cooked Egg",
+        "calories": 66
+      },
+      {
+        "name": "Cucumbers",
+        "calories": 4
+      },
+      {
+        "name": "Grape Tomatoes",
+        "calories": 8
+      },
+      {
+        "name": "Romaine Lettuce",
+        "calories": 7
+      },
+      {
+        "name": "Spring Salad Mix",
+        "calories": 2
+      }
     ],
     "Dinner": [
-      "Rotisserie-Style Chicken",
-      "Plant-Based Paella",
-      "Steamed Fresh Broccoli",
-      "Seasoned Carrots",
-      "Classic Cheese Pizza",
-      "Garlic Herb Breadstick",
-      "Premium Pizza Sauce",
-      "Crispy Chicken Sandwich",
-      "Grilled Black Bean Burger",
-      "Classic Hot Dog",
-      "Fresh Cut French Fries UNCP",
-      "American Cheese",
-      "Lettuce",
-      "Spicy Pork Taco",
-      "Roasted Grape Tomatoes",
-      "Roasted Mushrooms",
-      "Alfredo Sauce",
-      "Grilled Italian Sausage",
-      "Penne",
-      "Signature Chips",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Creamy Tuna Salad",
-      "Ham",
-      "Swiss Cheese",
-      "Turkey Breast",
-      "Green Leaf Lettuce",
-      "Chili Con Carne",
-      "Cookie Crumb Cupcake",
-      "Peanut Butter Cookie",
-      "Cinnamon-Honey Granola",
-      "Whipped Topping",
-      "Belgian Waffle Mix",
-      "Pancake Syrup",
-      "Bacon Pieces",
-      "Chopped Hard-Cooked Egg",
-      "Cucumbers",
-      "Grape Tomatoes",
-      "Romaine Lettuce",
-      "Spring Salad Mix",
-      "Shredded Cheddar Cheese",
-      "Shredded Carrots",
-      "Tzatziki Sauce"
+      {
+        "name": "Rotisserie-Style Chicken",
+        "calories": 307
+      },
+      {
+        "name": "Plant-Based Paella",
+        "calories": 156
+      },
+      {
+        "name": "Steamed Fresh Broccoli",
+        "calories": 18
+      },
+      {
+        "name": "Seasoned Carrots",
+        "calories": 56
+      },
+      {
+        "name": "Classic Cheese Pizza",
+        "calories": 269
+      },
+      {
+        "name": "Garlic Herb Breadstick",
+        "calories": 174
+      },
+      {
+        "name": "Premium Pizza Sauce",
+        "calories": 10
+      },
+      {
+        "name": "Grilled Black Bean Burger",
+        "calories": 257
+      },
+      {
+        "name": "Classic Hot Dog",
+        "calories": 304
+      },
+      {
+        "name": "Fresh Cut French Fries UNCP",
+        "calories": 151
+      },
+      {
+        "name": "Spicy Pork Taco",
+        "calories": 134
+      },
+      {
+        "name": "Roasted Grape Tomatoes",
+        "calories": 347
+      },
+      {
+        "name": "Roasted Mushrooms",
+        "calories": 94
+      },
+      {
+        "name": "Alfredo Sauce",
+        "calories": 33
+      },
+      {
+        "name": "Signature Chips",
+        "calories": 98
+      },
+      {
+        "name": "Flour Tortilla",
+        "calories": 211
+      },
+      {
+        "name": "Hoagie Roll",
+        "calories": 176
+      },
+      {
+        "name": "White Bread",
+        "calories": 129
+      },
+      {
+        "name": "Chili Con Carne",
+        "calories": 183
+      },
+      {
+        "name": "Cookie Crumb Cupcake",
+        "calories": 212
+      },
+      {
+        "name": "Peanut Butter Cookie",
+        "calories": 125
+      },
+      {
+        "name": "Cinnamon-Honey Granola",
+        "calories": 1792
+      },
+      {
+        "name": "Whipped Topping",
+        "calories": 107
+      },
+      {
+        "name": "Belgian Waffle Mix",
+        "calories": 452
+      },
+      {
+        "name": "Bacon Pieces",
+        "calories": 72
+      },
+      {
+        "name": "Chopped Hard-Cooked Egg",
+        "calories": 66
+      },
+      {
+        "name": "Cucumbers",
+        "calories": 4
+      },
+      {
+        "name": "Grape Tomatoes",
+        "calories": 8
+      },
+      {
+        "name": "Romaine Lettuce",
+        "calories": 7
+      },
+      {
+        "name": "Spring Salad Mix",
+        "calories": 2
+      },
+      {
+        "name": "Tzatziki Sauce",
+        "calories": 14
+      }
     ]
   },
   "Monday": {
     "Breakfast": [
-      "Scrambled Eggs",
-      "Pork Sausage Links",
-      "Turkey Sausage Patty",
-      "Hash Brown Potatoes",
-      "Southern Biscuit",
-      "Grits",
-      "Old Fashioned Oatmeal",
-      "Sausage Gravy",
-      "BLT Breakfast Sandwich",
-      "Bagel",
-      "Chive Cream Cheese",
-      "Citrus Honey Butter",
-      "Grape Jelly",
-      "Nutella®",
-      "Peanut Butter",
-      "Strawberry Cream Cheese",
-      "Whipped Butter",
-      "Whipped Cream Cheese",
-      "Bananaberry Mini Muffin",
-      "Eggs",
-      "Shredded Cheddar Cheese",
-      "Baby Spinach"
+      {
+        "name": "Scrambled Eggs",
+        "calories": 142
+      },
+      {
+        "name": "Pork Sausage Links",
+        "calories": 230
+      },
+      {
+        "name": "Turkey Sausage Patty",
+        "calories": 90
+      },
+      {
+        "name": "Hash Brown Potatoes",
+        "calories": 124
+      },
+      {
+        "name": "Southern Biscuit",
+        "calories": 186
+      },
+      {
+        "name": "Grits",
+        "calories": 90
+      },
+      {
+        "name": "Old Fashioned Oatmeal",
+        "calories": 106
+      },
+      {
+        "name": "Sausage Gravy",
+        "calories": 61
+      },
+      {
+        "name": "BLT Breakfast Sandwich",
+        "calories": 742
+      },
+      {
+        "name": "Bagel",
+        "calories": 175
+      },
+      {
+        "name": "Bananaberry Mini Muffin",
+        "calories": 81
+      }
     ],
     "Lunch": [
-      "Pulled Pork",
-      "Grilled Black Bean Burger",
-      "Classic Hot Dog",
-      "Fresh Cut French Fries UNCP",
-      "American Cheese",
-      "Lettuce",
-      "Mesquite Grilled Chicken",
-      "Thai Curry Plant-Based Chicken Linguine",
-      "Steamed Mixed Vegetables",
-      "Roasted Sweet Potatoes",
-      "Classic Cheese Pizza",
-      "Margherita Pizza",
-      "Garlic Herb Breadstick",
-      "Premium Pizza Sauce",
-      "Edamame",
-      "Seaweed Salad",
-      "Yum Yum Sauce",
-      "Ground Beef",
-      "Avocado",
-      "Steamed Fresh Broccoli",
-      "Roasted Grape Tomatoes",
-      "Roasted Mushrooms",
-      "Beef Meatballs",
-      "Cajun Cream Sauce",
-      "Grilled Italian Sausage",
-      "Shredded Parmesan",
-      "Cavatappi",
-      "Penne",
-      "Baby Spinach",
-      "Green Peas",
-      "Sauteed Onions",
-      "Garlic Roasted Vegetables",
-      "Signature Chips",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Whole Wheat Bread",
-      "Creamy Tuna Salad",
-      "Ham",
-      "Provolone Cheese",
-      "Swiss Cheese",
-      "Turkey Breast",
-      "Green Leaf Lettuce",
-      "Hummus",
-      "Corn Tortilla",
-      "Fresh Cilantro",
-      "Pickled Red Onion",
-      "Turkey Noodle Soup",
-      "Tomato Basil Soup",
-      "Crispy Cereal Bar",
-      "Chocolate Chip Cookie",
-      "Snickerdoodle",
-      "Cinnamon-Honey Granola",
-      "Whipped Topping",
-      "Chocolate Chips",
-      "Belgian Waffle Mix",
-      "Chocolate Syrup",
-      "Dried Cranberries",
-      "Pancake Syrup",
-      "Bacon Pieces",
-      "Chopped Hard-Cooked Egg",
-      "Cucumbers",
-      "Grape Tomatoes",
-      "Romaine Lettuce",
-      "Spring Salad Mix",
-      "Shredded Cheddar Cheese",
-      "Shredded Carrots",
-      "Banana",
-      "Mango"
+      {
+        "name": "Pulled Pork",
+        "calories": 191
+      },
+      {
+        "name": "Grilled Black Bean Burger",
+        "calories": 257
+      },
+      {
+        "name": "Classic Hot Dog",
+        "calories": 304
+      },
+      {
+        "name": "Fresh Cut French Fries UNCP",
+        "calories": 151
+      },
+      {
+        "name": "Mesquite Grilled Chicken",
+        "calories": 160
+      },
+      {
+        "name": "Thai Curry Plant-Based Chicken Linguine",
+        "calories": 325
+      },
+      {
+        "name": "Steamed Mixed Vegetables",
+        "calories": 18
+      },
+      {
+        "name": "Roasted Sweet Potatoes",
+        "calories": 94
+      },
+      {
+        "name": "Classic Cheese Pizza",
+        "calories": 269
+      },
+      {
+        "name": "Margherita Pizza",
+        "calories": 263
+      },
+      {
+        "name": "Garlic Herb Breadstick",
+        "calories": 174
+      },
+      {
+        "name": "Premium Pizza Sauce",
+        "calories": 10
+      },
+      {
+        "name": "Edamame",
+        "calories": 97
+      },
+      {
+        "name": "Seaweed Salad",
+        "calories": 99
+      },
+      {
+        "name": "Yum Yum Sauce",
+        "calories": 176
+      },
+      {
+        "name": "Steamed Fresh Broccoli",
+        "calories": 18
+      },
+      {
+        "name": "Roasted Grape Tomatoes",
+        "calories": 347
+      },
+      {
+        "name": "Roasted Mushrooms",
+        "calories": 94
+      },
+      {
+        "name": "Beef Meatballs",
+        "calories": 108
+      },
+      {
+        "name": "Cajun Cream Sauce",
+        "calories": 210
+      },
+      {
+        "name": "Garlic Roasted Vegetables",
+        "calories": 56
+      },
+      {
+        "name": "Signature Chips",
+        "calories": 98
+      },
+      {
+        "name": "Flour Tortilla",
+        "calories": 211
+      },
+      {
+        "name": "Hoagie Roll",
+        "calories": 176
+      },
+      {
+        "name": "White Bread",
+        "calories": 62
+      },
+      {
+        "name": "Whole Wheat Bread",
+        "calories": 65
+      },
+      {
+        "name": "Corn Tortilla",
+        "calories": 36
+      },
+      {
+        "name": "Turkey Noodle Soup",
+        "calories": 77
+      },
+      {
+        "name": "Crispy Cereal Bar",
+        "calories": 157
+      },
+      {
+        "name": "Chocolate Chip Cookie",
+        "calories": 121
+      },
+      {
+        "name": "Snickerdoodle",
+        "calories": 137
+      },
+      {
+        "name": "Cinnamon-Honey Granola",
+        "calories": 1792
+      },
+      {
+        "name": "Whipped Topping",
+        "calories": 107
+      },
+      {
+        "name": "Chocolate Chips",
+        "calories": 50
+      },
+      {
+        "name": "Belgian Waffle Mix",
+        "calories": 452
+      },
+      {
+        "name": "Bacon Pieces",
+        "calories": 72
+      },
+      {
+        "name": "Chopped Hard-Cooked Egg",
+        "calories": 66
+      },
+      {
+        "name": "Cucumbers",
+        "calories": 4
+      },
+      {
+        "name": "Grape Tomatoes",
+        "calories": 8
+      },
+      {
+        "name": "Romaine Lettuce",
+        "calories": 7
+      },
+      {
+        "name": "Spring Salad Mix",
+        "calories": 2
+      },
+      {
+        "name": "Banana",
+        "calories": 57
+      }
     ],
     "Dinner": [
-      "Beef Nachos",
-      "Chocolate Quesadilla",
-      "General Tso's Chicken",
-      "Sweet & Sour Tofu Stir-Fry",
-      "Baby Bok Choy",
-      "Stir-Fry Vegetables",
-      "Classic Cheese Pizza",
-      "Margherita Pizza",
-      "Philly Cheesesteak Pizza",
-      "Sausage Pizza",
-      "Garlic Herb Breadstick",
-      "Premium Pizza Sauce",
-      "Grilled Black Bean Burger",
-      "BBQ Pork Sandwich",
-      "Fresh Cut French Fries UNCP",
-      "Smash Burger",
-      "American Cheese",
-      "Cheddar Cheese",
-      "Swiss Cheese",
-      "Lettuce",
-      "Steamed Fresh Broccoli",
-      "Roasted Grape Tomatoes",
-      "Roasted Mushrooms",
-      "Alfredo Sauce",
-      "Grilled Italian Sausage",
-      "Shredded Parmesan",
-      "Cavatappi",
-      "Penne",
-      "Baby Spinach",
-      "Fresh Garlic",
-      "Green Peas",
-      "Sauteed Onions",
-      "Garlic Roasted Vegetables",
-      "Signature Chips",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Creamy Tuna Salad",
-      "Ham",
-      "Provolone Cheese",
-      "Turkey Breast",
-      "Green Leaf Lettuce",
-      "Hummus",
-      "Jackfruit Carnitas",
-      "Pulled Chicken",
-      "Corn Tortilla",
-      "Feta Cheese Crumbles",
-      "Fresh Cilantro",
-      "Pickled Red Onion",
-      "Turkey Noodle Soup",
-      "Tomato Basil Soup",
-      "Vanilla Chocolate Cupcake",
-      "Cinnamon-Honey Granola",
-      "Whipped Topping",
-      "Chocolate Chips",
-      "Belgian Waffle Mix",
-      "Chocolate Syrup",
-      "Dried Cranberries",
-      "Pancake Syrup",
-      "Bacon Pieces",
-      "Chopped Hard-Cooked Egg",
-      "Cucumbers",
-      "Grape Tomatoes",
-      "Romaine Lettuce",
-      "Spring Salad Mix",
-      "Shredded Cheddar Cheese",
-      "Shredded Carrots",
-      "Banana",
-      "Mango"
+      {
+        "name": "Beef Nachos",
+        "calories": 508
+      },
+      {
+        "name": "Chocolate Quesadilla",
+        "calories": 398
+      },
+      {
+        "name": "General Tso's Chicken",
+        "calories": 349
+      },
+      {
+        "name": "Sweet & Sour Tofu Stir-Fry",
+        "calories": 101
+      },
+      {
+        "name": "Baby Bok Choy",
+        "calories": 14
+      },
+      {
+        "name": "Stir-Fry Vegetables",
+        "calories": 46
+      },
+      {
+        "name": "Classic Cheese Pizza",
+        "calories": 269
+      },
+      {
+        "name": "Margherita Pizza",
+        "calories": 263
+      },
+      {
+        "name": "Philly Cheesesteak Pizza",
+        "calories": 311
+      },
+      {
+        "name": "Sausage Pizza",
+        "calories": 326
+      },
+      {
+        "name": "Garlic Herb Breadstick",
+        "calories": 174
+      },
+      {
+        "name": "Premium Pizza Sauce",
+        "calories": 10
+      },
+      {
+        "name": "Grilled Black Bean Burger",
+        "calories": 257
+      },
+      {
+        "name": "BBQ Pork Sandwich",
+        "calories": 444
+      },
+      {
+        "name": "Fresh Cut French Fries UNCP",
+        "calories": 151
+      },
+      {
+        "name": "Smash Burger",
+        "calories": 341
+      },
+      {
+        "name": "Steamed Fresh Broccoli",
+        "calories": 18
+      },
+      {
+        "name": "Roasted Grape Tomatoes",
+        "calories": 347
+      },
+      {
+        "name": "Roasted Mushrooms",
+        "calories": 94
+      },
+      {
+        "name": "Alfredo Sauce",
+        "calories": 28
+      },
+      {
+        "name": "Garlic Roasted Vegetables",
+        "calories": 56
+      },
+      {
+        "name": "Signature Chips",
+        "calories": 98
+      },
+      {
+        "name": "Flour Tortilla",
+        "calories": 211
+      },
+      {
+        "name": "Hoagie Roll",
+        "calories": 176
+      },
+      {
+        "name": "White Bread",
+        "calories": 129
+      },
+      {
+        "name": "Jackfruit Carnitas",
+        "calories": 646
+      },
+      {
+        "name": "Pulled Chicken",
+        "calories": 704
+      },
+      {
+        "name": "Corn Tortilla",
+        "calories": 36
+      },
+      {
+        "name": "Turkey Noodle Soup",
+        "calories": 77
+      },
+      {
+        "name": "Vanilla Chocolate Cupcake",
+        "calories": 337
+      },
+      {
+        "name": "Cinnamon-Honey Granola",
+        "calories": 1792
+      },
+      {
+        "name": "Whipped Topping",
+        "calories": 107
+      },
+      {
+        "name": "Chocolate Chips",
+        "calories": 50
+      },
+      {
+        "name": "Belgian Waffle Mix",
+        "calories": 452
+      },
+      {
+        "name": "Bacon Pieces",
+        "calories": 72
+      },
+      {
+        "name": "Chopped Hard-Cooked Egg",
+        "calories": 66
+      },
+      {
+        "name": "Cucumbers",
+        "calories": 4
+      },
+      {
+        "name": "Grape Tomatoes",
+        "calories": 8
+      },
+      {
+        "name": "Romaine Lettuce",
+        "calories": 7
+      },
+      {
+        "name": "Spring Salad Mix",
+        "calories": 2
+      },
+      {
+        "name": "Banana",
+        "calories": 57
+      }
     ]
   },
   "Tuesday": {
     "Breakfast": [
-      "Scrambled Eggs",
-      "Bacon",
-      "Turkey Sausage Link",
-      "Home Fries",
-      "French Toast Sticks",
-      "Southern Biscuit",
-      "Grits",
-      "Old Fashioned Oatmeal",
-      "Sausage Gravy",
-      "Bacon, Egg & Cheese Biscuit",
-      "Bagel",
-      "Chive Cream Cheese",
-      "Citrus Honey Butter",
-      "Grape Jelly",
-      "Nutella®",
-      "Peanut Butter",
-      "Strawberry Cream Cheese",
-      "Whipped Butter",
-      "Whipped Cream Cheese",
-      "Blueberry Muffin",
-      "Donut Bites",
-      "Eggs",
-      "Shredded Cheddar Cheese",
-      "Baby Spinach"
+      {
+        "name": "Scrambled Eggs",
+        "calories": 142
+      },
+      {
+        "name": "Bacon",
+        "calories": 125
+      },
+      {
+        "name": "Turkey Sausage Link",
+        "calories": 97
+      },
+      {
+        "name": "Home Fries",
+        "calories": 143
+      },
+      {
+        "name": "French Toast Sticks",
+        "calories": 304
+      },
+      {
+        "name": "Southern Biscuit",
+        "calories": 186
+      },
+      {
+        "name": "Grits",
+        "calories": 90
+      },
+      {
+        "name": "Old Fashioned Oatmeal",
+        "calories": 106
+      },
+      {
+        "name": "Sausage Gravy",
+        "calories": 61
+      },
+      {
+        "name": "Bacon, Egg & Cheese Biscuit",
+        "calories": 275
+      },
+      {
+        "name": "Bagel",
+        "calories": 175
+      },
+      {
+        "name": "Blueberry Muffin",
+        "calories": 340
+      },
+      {
+        "name": "Donut Bites",
+        "calories": 210
+      }
     ],
     "Lunch": [
-      "Halal Meatballs",
-      "Steamed Fresh Broccoli",
-      "Roasted Grape Tomatoes",
-      "Roasted Mushrooms",
-      "Premium Pizza Sauce",
-      "Cajun Cream Sauce",
-      "Grilled Italian Sausage",
-      "Shredded Parmesan",
-      "Cavatappi",
-      "Penne",
-      "Baby Spinach",
-      "Fresh Garlic",
-      "Green Peas",
-      "Sauteed Onions",
-      "Grilled Garlic-Herb Salmon",
-      "Couscous",
-      "Carrots",
-      "Kale Greens Mix",
-      "Red Onion Marmalade",
-      "Classic Cheese Pizza",
-      "Meatball Pizza",
-      "Garlic Herb Breadstick",
-      "Grilled Black Bean Burger",
-      "Classic Hot Dog",
-      "Grilled Cheese with Bacon",
-      "Old-Fashioned Coleslaw",
-      "Fresh Cut French Fries UNCP",
-      "American Cheese",
-      "Lettuce",
-      "Sweet Pickle Relish",
-      "Soft Beef Taco",
-      "Tortilla Chips",
-      "Roasted Corn",
-      "Sour Cream",
-      "Shredded Cheddar Cheese",
-      "Salsa",
-      "Garlic Roasted Vegetables",
-      "Signature Chips",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Whole Wheat Bread",
-      "Creamy Tuna Salad",
-      "Ham",
-      "Provolone Cheese",
-      "Swiss Cheese",
-      "Turkey Breast",
-      "Green Leaf Lettuce",
-      "Hummus",
-      "Old-Fashioned Mashed Potatoes",
-      "Broccoli Florets",
-      "Crispy Onions",
-      "Texas BBQ Sauce",
-      "Crispy Bacon Bits",
-      "Roasted Corn Chowder",
-      "Fudge Brownie",
-      "Cinnamon-Honey Granola",
-      "Whipped Topping",
-      "Belgian Waffle Mix",
-      "Chocolate Syrup",
-      "Pancake Syrup",
-      "Bacon Pieces",
-      "Chopped Hard-Cooked Egg",
-      "Cucumbers",
-      "Grape Tomatoes",
-      "Romaine Lettuce",
-      "Spring Salad Mix",
-      "Shredded Carrots",
-      "Banana",
-      "Mango"
+      {
+        "name": "Halal Meatballs",
+        "calories": 1191
+      },
+      {
+        "name": "Steamed Fresh Broccoli",
+        "calories": 18
+      },
+      {
+        "name": "Roasted Grape Tomatoes",
+        "calories": 347
+      },
+      {
+        "name": "Roasted Mushrooms",
+        "calories": 94
+      },
+      {
+        "name": "Premium Pizza Sauce",
+        "calories": 10
+      },
+      {
+        "name": "Cajun Cream Sauce",
+        "calories": 210
+      },
+      {
+        "name": "Grilled Garlic-Herb Salmon",
+        "calories": 126
+      },
+      {
+        "name": "Couscous",
+        "calories": 54
+      },
+      {
+        "name": "Carrots",
+        "calories": 10
+      },
+      {
+        "name": "Kale Greens Mix",
+        "calories": 4
+      },
+      {
+        "name": "Red Onion Marmalade",
+        "calories": 35
+      },
+      {
+        "name": "Classic Cheese Pizza",
+        "calories": 269
+      },
+      {
+        "name": "Meatball Pizza",
+        "calories": 294
+      },
+      {
+        "name": "Garlic Herb Breadstick",
+        "calories": 174
+      },
+      {
+        "name": "Grilled Black Bean Burger",
+        "calories": 257
+      },
+      {
+        "name": "Classic Hot Dog",
+        "calories": 304
+      },
+      {
+        "name": "Grilled Cheese with Bacon",
+        "calories": 492
+      },
+      {
+        "name": "Old-Fashioned Coleslaw",
+        "calories": 149
+      },
+      {
+        "name": "Fresh Cut French Fries UNCP",
+        "calories": 151
+      },
+      {
+        "name": "Soft Beef Taco",
+        "calories": 235
+      },
+      {
+        "name": "Tortilla Chips",
+        "calories": 224
+      },
+      {
+        "name": "Roasted Corn",
+        "calories": 108
+      },
+      {
+        "name": "Sour Cream",
+        "calories": 94
+      },
+      {
+        "name": "Garlic Roasted Vegetables",
+        "calories": 56
+      },
+      {
+        "name": "Signature Chips",
+        "calories": 98
+      },
+      {
+        "name": "Flour Tortilla",
+        "calories": 211
+      },
+      {
+        "name": "Hoagie Roll",
+        "calories": 176
+      },
+      {
+        "name": "White Bread",
+        "calories": 62
+      },
+      {
+        "name": "Whole Wheat Bread",
+        "calories": 65
+      },
+      {
+        "name": "Old-Fashioned Mashed Potatoes",
+        "calories": 111
+      },
+      {
+        "name": "Broccoli Florets",
+        "calories": 14
+      },
+      {
+        "name": "Crispy Onions",
+        "calories": 1117
+      },
+      {
+        "name": "Texas BBQ Sauce",
+        "calories": 52
+      },
+      {
+        "name": "Roasted Corn Chowder",
+        "calories": 143
+      },
+      {
+        "name": "Fudge Brownie",
+        "calories": 286
+      },
+      {
+        "name": "Cinnamon-Honey Granola",
+        "calories": 1792
+      },
+      {
+        "name": "Whipped Topping",
+        "calories": 107
+      },
+      {
+        "name": "Belgian Waffle Mix",
+        "calories": 452
+      },
+      {
+        "name": "Bacon Pieces",
+        "calories": 72
+      },
+      {
+        "name": "Chopped Hard-Cooked Egg",
+        "calories": 66
+      },
+      {
+        "name": "Cucumbers",
+        "calories": 4
+      },
+      {
+        "name": "Grape Tomatoes",
+        "calories": 8
+      },
+      {
+        "name": "Romaine Lettuce",
+        "calories": 7
+      },
+      {
+        "name": "Spring Salad Mix",
+        "calories": 2
+      },
+      {
+        "name": "Banana",
+        "calories": 57
+      }
     ],
     "Dinner": [
-      "Salisbury Steak & Mushroom Sauce",
-      "Brussels Sprouts & Carrots",
-      "Zucchini & Yellow Squash Saute",
-      "Creamy Mashed Potatoes",
-      "Plant-Based Chili Con Carne",
-      "Panko-Crusted Shrimp",
-      "Spicy Sweet Chili Sauce",
-      "Classic Cheese Pizza",
-      "Meatball Pizza",
-      "Garlic Herb Breadstick",
-      "Cheesy Baked Penne",
-      "Premium Pizza Sauce",
-      "Grilled Black Bean Burger",
-      "Classic Hot Dog",
-      "Fresh Cut French Fries UNCP",
-      "Smash Burger",
-      "Lettuce",
-      "Steamed Fresh Broccoli",
-      "Roasted Grape Tomatoes",
-      "Roasted Mushrooms",
-      "Cajun Cream Sauce",
-      "Grilled Italian Sausage",
-      "Shredded Parmesan",
-      "Cavatappi",
-      "Penne",
-      "Baby Spinach",
-      "Sauteed Onions",
-      "Garlic Roasted Vegetables",
-      "Signature Chips",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Creamy Tuna Salad",
-      "Ham",
-      "Turkey Breast",
-      "Green Leaf Lettuce",
-      "Hummus",
-      "Roasted Corn Chowder",
-      "Vanilla Chocolate Cupcake",
-      "Cinnamon-Honey Granola",
-      "Whipped Topping",
-      "Belgian Waffle Mix",
-      "Chocolate Syrup",
-      "Pancake Syrup",
-      "Bacon Pieces",
-      "Chopped Hard-Cooked Egg",
-      "Cucumbers",
-      "Grape Tomatoes",
-      "Romaine Lettuce",
-      "Spring Salad Mix",
-      "Shredded Cheddar Cheese",
-      "Shredded Carrots",
-      "Banana",
-      "Mango",
-      "Kale Greens Mix"
+      {
+        "name": "Salisbury Steak & Mushroom Sauce",
+        "calories": 282
+      },
+      {
+        "name": "Brussels Sprouts & Carrots",
+        "calories": 36
+      },
+      {
+        "name": "Creamy Mashed Potatoes",
+        "calories": 114
+      },
+      {
+        "name": "Plant-Based Chili Con Carne",
+        "calories": 211
+      },
+      {
+        "name": "Spicy Sweet Chili Sauce",
+        "calories": 206
+      },
+      {
+        "name": "Classic Cheese Pizza",
+        "calories": 269
+      },
+      {
+        "name": "Meatball Pizza",
+        "calories": 322
+      },
+      {
+        "name": "Garlic Herb Breadstick",
+        "calories": 174
+      },
+      {
+        "name": "Cheesy Baked Penne",
+        "calories": 399
+      },
+      {
+        "name": "Premium Pizza Sauce",
+        "calories": 10
+      },
+      {
+        "name": "Grilled Black Bean Burger",
+        "calories": 257
+      },
+      {
+        "name": "Classic Hot Dog",
+        "calories": 304
+      },
+      {
+        "name": "Fresh Cut French Fries UNCP",
+        "calories": 151
+      },
+      {
+        "name": "Smash Burger",
+        "calories": 341
+      },
+      {
+        "name": "Steamed Fresh Broccoli",
+        "calories": 18
+      },
+      {
+        "name": "Roasted Grape Tomatoes",
+        "calories": 347
+      },
+      {
+        "name": "Roasted Mushrooms",
+        "calories": 94
+      },
+      {
+        "name": "Cajun Cream Sauce",
+        "calories": 210
+      },
+      {
+        "name": "Garlic Roasted Vegetables",
+        "calories": 56
+      },
+      {
+        "name": "Signature Chips",
+        "calories": 98
+      },
+      {
+        "name": "Flour Tortilla",
+        "calories": 211
+      },
+      {
+        "name": "Hoagie Roll",
+        "calories": 176
+      },
+      {
+        "name": "White Bread",
+        "calories": 129
+      },
+      {
+        "name": "Roasted Corn Chowder",
+        "calories": 143
+      },
+      {
+        "name": "Vanilla Chocolate Cupcake",
+        "calories": 337
+      },
+      {
+        "name": "Cinnamon-Honey Granola",
+        "calories": 1792
+      },
+      {
+        "name": "Whipped Topping",
+        "calories": 107
+      },
+      {
+        "name": "Belgian Waffle Mix",
+        "calories": 452
+      },
+      {
+        "name": "Bacon Pieces",
+        "calories": 72
+      },
+      {
+        "name": "Chopped Hard-Cooked Egg",
+        "calories": 66
+      },
+      {
+        "name": "Cucumbers",
+        "calories": 4
+      },
+      {
+        "name": "Grape Tomatoes",
+        "calories": 8
+      },
+      {
+        "name": "Romaine Lettuce",
+        "calories": 7
+      },
+      {
+        "name": "Spring Salad Mix",
+        "calories": 2
+      },
+      {
+        "name": "Banana",
+        "calories": 57
+      },
+      {
+        "name": "Kale Greens Mix",
+        "calories": 4
+      }
     ]
   },
   "Wednesday": {
     "Breakfast": [
-      "Scrambled Eggs",
-      "Pork Sausage Links",
-      "Turkey Sausage Patty",
-      "O'Brien Potatoes",
-      "Southern Biscuit",
-      "Grits",
-      "Old Fashioned Oatmeal",
-      "Sausage Gravy",
-      "Bacon, Egg & Cheese Biscuit",
-      "French Toast",
-      "Bagel",
-      "Chive Cream Cheese",
-      "Citrus Honey Butter",
-      "Grape Jelly",
-      "Nutella®",
-      "Peanut Butter",
-      "Strawberry Cream Cheese",
-      "Whipped Butter",
-      "Whipped Cream Cheese",
-      "Carrot Raisin Mini Muffin",
-      "Chili Chocolate Donut Bites",
-      "Eggs",
-      "Shredded Cheddar Cheese",
-      "Baby Spinach"
+      {
+        "name": "Scrambled Eggs",
+        "calories": 142
+      },
+      {
+        "name": "Pork Sausage Links",
+        "calories": 230
+      },
+      {
+        "name": "Turkey Sausage Patty",
+        "calories": 90
+      },
+      {
+        "name": "O'Brien Potatoes",
+        "calories": 140
+      },
+      {
+        "name": "Southern Biscuit",
+        "calories": 186
+      },
+      {
+        "name": "Grits",
+        "calories": 90
+      },
+      {
+        "name": "Old Fashioned Oatmeal",
+        "calories": 106
+      },
+      {
+        "name": "Sausage Gravy",
+        "calories": 61
+      },
+      {
+        "name": "Bacon, Egg & Cheese Biscuit",
+        "calories": 275
+      },
+      {
+        "name": "French Toast",
+        "calories": 161
+      },
+      {
+        "name": "Bagel",
+        "calories": 175
+      },
+      {
+        "name": "Carrot Raisin Mini Muffin",
+        "calories": 102
+      },
+      {
+        "name": "Chili Chocolate Donut Bites",
+        "calories": 195
+      }
     ],
     "Lunch": [
-      "Chicken Teriyaki",
-      "General Tso's Tofu",
-      "Roasted Fall Vegetables",
-      "Spicy Vegetable Lo Mein",
-      "Classic Cheese Pizza",
-      "Meat Lover's Pizza",
-      "Garlic Herb Breadstick",
-      "Premium Pizza Sauce",
-      "Grilled Black Bean Burger",
-      "Classic Hot Dog",
-      "Fresh Cut French Fries UNCP",
-      "Smash Burger",
-      "American Cheese",
-      "Lettuce",
-      "Steamed Fresh Broccoli",
-      "Roasted Grape Tomatoes",
-      "Roasted Mushrooms",
-      "Cajun Cream Sauce",
-      "Grilled Italian Sausage",
-      "Shredded Parmesan",
-      "Cavatappi",
-      "Penne",
-      "Baby Spinach",
-      "Fresh Garlic",
-      "Green Peas",
-      "Sauteed Onions",
-      "Garlic Roasted Vegetables",
-      "Signature Chips",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Whole Wheat Bread",
-      "Creamy Tuna Salad",
-      "Ham",
-      "Provolone Cheese",
-      "Swiss Cheese",
-      "Turkey Breast",
-      "Green Leaf Lettuce",
-      "Hummus",
-      "Shawarma chicken",
-      "Dried Apricots",
-      "Roasted Chickpeas",
-      "Shredded Carrots",
-      "Pita Wedges",
-      "Beef Gyro Meat",
-      "Tzatziki Sauce",
-      "Grape Tomatoes",
-      "Pitted Kalamata Olives",
-      "Pickled Red Onion",
-      "Chocolate Cake",
-      "Chocolate Brownie",
-      "Crispy Cereal Bar",
-      "Cinnamon-Honey Granola",
-      "Whipped Topping",
-      "Chocolate Chips",
-      "Belgian Waffle Mix",
-      "Chocolate Syrup",
-      "Dried Cranberries",
-      "Pancake Syrup",
-      "Bacon Pieces",
-      "Chopped Hard-Cooked Egg",
-      "Cucumbers",
-      "Romaine Lettuce",
-      "Spring Salad Mix",
-      "Shredded Cheddar Cheese",
-      "Banana",
-      "Mango"
+      {
+        "name": "Chicken Teriyaki",
+        "calories": 127
+      },
+      {
+        "name": "General Tso's Tofu",
+        "calories": 117
+      },
+      {
+        "name": "Roasted Fall Vegetables",
+        "calories": 58
+      },
+      {
+        "name": "Spicy Vegetable Lo Mein",
+        "calories": 196
+      },
+      {
+        "name": "Classic Cheese Pizza",
+        "calories": 269
+      },
+      {
+        "name": "Meat Lover's Pizza",
+        "calories": 353
+      },
+      {
+        "name": "Garlic Herb Breadstick",
+        "calories": 174
+      },
+      {
+        "name": "Premium Pizza Sauce",
+        "calories": 10
+      },
+      {
+        "name": "Grilled Black Bean Burger",
+        "calories": 257
+      },
+      {
+        "name": "Classic Hot Dog",
+        "calories": 304
+      },
+      {
+        "name": "Fresh Cut French Fries UNCP",
+        "calories": 151
+      },
+      {
+        "name": "Smash Burger",
+        "calories": 341
+      },
+      {
+        "name": "Steamed Fresh Broccoli",
+        "calories": 18
+      },
+      {
+        "name": "Roasted Grape Tomatoes",
+        "calories": 347
+      },
+      {
+        "name": "Roasted Mushrooms",
+        "calories": 94
+      },
+      {
+        "name": "Cajun Cream Sauce",
+        "calories": 210
+      },
+      {
+        "name": "Garlic Roasted Vegetables",
+        "calories": 56
+      },
+      {
+        "name": "Signature Chips",
+        "calories": 98
+      },
+      {
+        "name": "Flour Tortilla",
+        "calories": 211
+      },
+      {
+        "name": "Hoagie Roll",
+        "calories": 176
+      },
+      {
+        "name": "White Bread",
+        "calories": 62
+      },
+      {
+        "name": "Whole Wheat Bread",
+        "calories": 65
+      },
+      {
+        "name": "Shawarma chicken",
+        "calories": 729
+      },
+      {
+        "name": "Dried Apricots",
+        "calories": 26
+      },
+      {
+        "name": "Pita Wedges",
+        "calories": 26
+      },
+      {
+        "name": "Beef Gyro Meat",
+        "calories": 1033
+      },
+      {
+        "name": "Tzatziki Sauce",
+        "calories": 30
+      },
+      {
+        "name": "Grape Tomatoes",
+        "calories": 8
+      },
+      {
+        "name": "Pitted Kalamata Olives",
+        "calories": 61
+      },
+      {
+        "name": "Chocolate Cake",
+        "calories": 167
+      },
+      {
+        "name": "Chocolate Brownie",
+        "calories": 280
+      },
+      {
+        "name": "Crispy Cereal Bar",
+        "calories": 157
+      },
+      {
+        "name": "Cinnamon-Honey Granola",
+        "calories": 1792
+      },
+      {
+        "name": "Whipped Topping",
+        "calories": 107
+      },
+      {
+        "name": "Chocolate Chips",
+        "calories": 50
+      },
+      {
+        "name": "Belgian Waffle Mix",
+        "calories": 452
+      },
+      {
+        "name": "Bacon Pieces",
+        "calories": 72
+      },
+      {
+        "name": "Chopped Hard-Cooked Egg",
+        "calories": 66
+      },
+      {
+        "name": "Cucumbers",
+        "calories": 4
+      },
+      {
+        "name": "Romaine Lettuce",
+        "calories": 7
+      },
+      {
+        "name": "Spring Salad Mix",
+        "calories": 2
+      },
+      {
+        "name": "Banana",
+        "calories": 57
+      }
     ],
     "Dinner": [
-      "Butter Chicken",
-      "Grilled Naan",
-      "Tomato-Onion Chutney",
-      "Chicken & Ham Jambalaya",
-      "Spicy Vegetable Gumbo",
-      "Spicy Okra",
-      "Classic Cheese Pizza",
-      "Buffalo Chicken Flatbread",
-      "Garlic Herb Breadstick",
-      "Cavatappi Alfredo with Broccoli",
-      "Premium Pizza Sauce",
-      "Grilled Black Bean Burger",
-      "Classic Hot Dog",
-      "Fresh Cut French Fries UNCP",
-      "Smash Burger",
-      "American Cheese",
-      "Cheddar Cheese",
-      "Swiss Cheese",
-      "Lettuce",
-      "Steamed Fresh Broccoli",
-      "Roasted Grape Tomatoes",
-      "Roasted Mushrooms",
-      "Cajun Cream Sauce",
-      "Grilled Italian Sausage",
-      "Shredded Parmesan",
-      "Cavatappi",
-      "Penne",
-      "Baby Spinach",
-      "Fresh Garlic",
-      "Green Peas",
-      "Sauteed Onions",
-      "Garlic Roasted Vegetables",
-      "Signature Chips",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Creamy Tuna Salad",
-      "Ham",
-      "Provolone Cheese",
-      "Turkey Breast",
-      "Green Leaf Lettuce",
-      "Hummus",
-      "Spiralized Zucchini",
-      "Spiralized Carrots",
-      "Grilled Chicken",
-      "Feta Cheese Crumbles",
-      "Roasted Chickpeas",
-      "Vanilla Chocolate Cupcake",
-      "Chocolate Chip Cookie",
-      "Cinnamon-Honey Granola",
-      "Whipped Topping",
-      "Chocolate Chips",
-      "Belgian Waffle Mix",
-      "Chocolate Syrup",
-      "Dried Cranberries",
-      "Pancake Syrup",
-      "Bacon Pieces",
-      "Chopped Hard-Cooked Egg",
-      "Cucumbers",
-      "Grape Tomatoes",
-      "Romaine Lettuce",
-      "Spring Salad Mix",
-      "Shredded Cheddar Cheese",
-      "Shredded Carrots",
-      "Banana",
-      "Mango"
+      {
+        "name": "Butter Chicken",
+        "calories": 192
+      },
+      {
+        "name": "Grilled Naan",
+        "calories": 254
+      },
+      {
+        "name": "Tomato-Onion Chutney",
+        "calories": 136
+      },
+      {
+        "name": "Spicy Vegetable Gumbo",
+        "calories": 39
+      },
+      {
+        "name": "Classic Cheese Pizza",
+        "calories": 269
+      },
+      {
+        "name": "Buffalo Chicken Flatbread",
+        "calories": 521
+      },
+      {
+        "name": "Garlic Herb Breadstick",
+        "calories": 174
+      },
+      {
+        "name": "Cavatappi Alfredo with Broccoli",
+        "calories": 232
+      },
+      {
+        "name": "Premium Pizza Sauce",
+        "calories": 10
+      },
+      {
+        "name": "Grilled Black Bean Burger",
+        "calories": 257
+      },
+      {
+        "name": "Classic Hot Dog",
+        "calories": 304
+      },
+      {
+        "name": "Fresh Cut French Fries UNCP",
+        "calories": 151
+      },
+      {
+        "name": "Smash Burger",
+        "calories": 341
+      },
+      {
+        "name": "Steamed Fresh Broccoli",
+        "calories": 18
+      },
+      {
+        "name": "Roasted Grape Tomatoes",
+        "calories": 347
+      },
+      {
+        "name": "Roasted Mushrooms",
+        "calories": 94
+      },
+      {
+        "name": "Cajun Cream Sauce",
+        "calories": 210
+      },
+      {
+        "name": "Garlic Roasted Vegetables",
+        "calories": 56
+      },
+      {
+        "name": "Signature Chips",
+        "calories": 98
+      },
+      {
+        "name": "Flour Tortilla",
+        "calories": 211
+      },
+      {
+        "name": "Hoagie Roll",
+        "calories": 176
+      },
+      {
+        "name": "White Bread",
+        "calories": 129
+      },
+      {
+        "name": "Spiralized Zucchini",
+        "calories": 77
+      },
+      {
+        "name": "Spiralized Carrots",
+        "calories": 186
+      },
+      {
+        "name": "Vanilla Chocolate Cupcake",
+        "calories": 337
+      },
+      {
+        "name": "Chocolate Chip Cookie",
+        "calories": 121
+      },
+      {
+        "name": "Cinnamon-Honey Granola",
+        "calories": 1792
+      },
+      {
+        "name": "Whipped Topping",
+        "calories": 107
+      },
+      {
+        "name": "Chocolate Chips",
+        "calories": 50
+      },
+      {
+        "name": "Belgian Waffle Mix",
+        "calories": 452
+      },
+      {
+        "name": "Bacon Pieces",
+        "calories": 72
+      },
+      {
+        "name": "Chopped Hard-Cooked Egg",
+        "calories": 66
+      },
+      {
+        "name": "Cucumbers",
+        "calories": 4
+      },
+      {
+        "name": "Grape Tomatoes",
+        "calories": 8
+      },
+      {
+        "name": "Romaine Lettuce",
+        "calories": 7
+      },
+      {
+        "name": "Spring Salad Mix",
+        "calories": 2
+      },
+      {
+        "name": "Banana",
+        "calories": 57
+      }
     ]
   },
   "Thursday": {
     "Breakfast": [
-      "Smoked  Maple Sausage",
-      "Scrambled Eggs",
-      "Turkey Bacon",
-      "Crispy Tater Tots",
-      "French Toast",
-      "Southern Biscuit",
-      "Grits",
-      "Old Fashioned Oatmeal",
-      "Sausage Gravy",
-      "Fried Egg, Ham & Cheese Bagel",
-      "Bagel",
-      "Chive Cream Cheese",
-      "Citrus Honey Butter",
-      "Grape Jelly",
-      "Nutella®",
-      "Peanut Butter",
-      "Strawberry Cream Cheese",
-      "Whipped Butter",
-      "Whipped Cream Cheese",
-      "Banana Bread",
-      "Eggs",
-      "Shredded Cheddar Cheese",
-      "Baby Spinach"
+      {
+        "name": "Smoked  Maple Sausage",
+        "calories": 177
+      },
+      {
+        "name": "Scrambled Eggs",
+        "calories": 142
+      },
+      {
+        "name": "Turkey Bacon",
+        "calories": 44
+      },
+      {
+        "name": "Crispy Tater Tots",
+        "calories": 93
+      },
+      {
+        "name": "French Toast",
+        "calories": 161
+      },
+      {
+        "name": "Southern Biscuit",
+        "calories": 186
+      },
+      {
+        "name": "Grits",
+        "calories": 90
+      },
+      {
+        "name": "Old Fashioned Oatmeal",
+        "calories": 106
+      },
+      {
+        "name": "Sausage Gravy",
+        "calories": 61
+      },
+      {
+        "name": "Fried Egg, Ham & Cheese Bagel",
+        "calories": 356
+      },
+      {
+        "name": "Bagel",
+        "calories": 175
+      },
+      {
+        "name": "Banana Bread",
+        "calories": 166
+      }
     ],
     "Lunch": [
-      "Cajun Roasted Pork Loin",
-      "Steamed Green Peas",
-      "Steamed Mixed Vegetables",
-      "Roasted Garlic Potatoes",
-      "BBQ Jackfruit",
-      "Classic Cheese Pizza",
-      "White Pizza",
-      "Garlic Herb Breadstick",
-      "Premium Pizza Sauce",
-      "Grilled Black Bean Burger",
-      "Classic Hot Dog",
-      "Cheese Quesadilla",
-      "Fresh Cut French Fries UNCP",
-      "Sour Cream",
-      "Salsa",
-      "Steamed Fresh Broccoli",
-      "Roasted Grape Tomatoes",
-      "Roasted Mushrooms",
-      "Cajun Cream Sauce",
-      "Grilled Italian Sausage",
-      "Shredded Parmesan",
-      "Cavatappi",
-      "Penne",
-      "Baby Spinach",
-      "Fresh Garlic",
-      "Green Peas",
-      "Sauteed Onions",
-      "Garlic Roasted Vegetables",
-      "Signature Chips",
-      "Tuna",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Whole Wheat Bread",
-      "American Cheese",
-      "Ham",
-      "Provolone Cheese",
-      "Roast Beef",
-      "Swiss Cheese",
-      "Turkey Breast",
-      "Green Leaf Lettuce",
-      "Hummus",
-      "Chicken Tinga",
-      "Guacamole",
-      "Queso Dip",
-      "Tortilla Straws",
-      "Pickled Red Onion",
-      "Pico de Gallo",
-      "Curried Chicken",
-      "Broccoli Florets",
-      "Roasted Chickpeas",
-      "Minestrone Soup",
-      "Chili Con Carne",
-      "Broccoli Cheddar Soup",
-      "Vanilla Cake",
-      "Chocolate Brownie",
-      "Oatmeal Cookie",
-      "Cinnamon-Honey Granola",
-      "Whipped Topping",
-      "Chocolate Chips",
-      "Belgian Waffle Mix",
-      "Chocolate Syrup",
-      "Dried Cranberries",
-      "Pancake Syrup",
-      "Bacon Pieces",
-      "Chopped Hard-Cooked Egg",
-      "Cucumbers",
-      "Grape Tomatoes",
-      "Romaine Lettuce",
-      "Spring Salad Mix",
-      "Shredded Cheddar Cheese",
-      "Shredded Carrots",
-      "Banana",
-      "Mango"
+      {
+        "name": "Cajun Roasted Pork Loin",
+        "calories": 218
+      },
+      {
+        "name": "Steamed Green Peas",
+        "calories": 70
+      },
+      {
+        "name": "Steamed Mixed Vegetables",
+        "calories": 18
+      },
+      {
+        "name": "Roasted Garlic Potatoes",
+        "calories": 84
+      },
+      {
+        "name": "Classic Cheese Pizza",
+        "calories": 269
+      },
+      {
+        "name": "White Pizza",
+        "calories": 323
+      },
+      {
+        "name": "Garlic Herb Breadstick",
+        "calories": 174
+      },
+      {
+        "name": "Premium Pizza Sauce",
+        "calories": 10
+      },
+      {
+        "name": "Grilled Black Bean Burger",
+        "calories": 257
+      },
+      {
+        "name": "Classic Hot Dog",
+        "calories": 304
+      },
+      {
+        "name": "Cheese Quesadilla",
+        "calories": 515
+      },
+      {
+        "name": "Fresh Cut French Fries UNCP",
+        "calories": 151
+      },
+      {
+        "name": "Sour Cream",
+        "calories": 94
+      },
+      {
+        "name": "Steamed Fresh Broccoli",
+        "calories": 18
+      },
+      {
+        "name": "Roasted Grape Tomatoes",
+        "calories": 347
+      },
+      {
+        "name": "Roasted Mushrooms",
+        "calories": 94
+      },
+      {
+        "name": "Cajun Cream Sauce",
+        "calories": 210
+      },
+      {
+        "name": "Garlic Roasted Vegetables",
+        "calories": 56
+      },
+      {
+        "name": "Signature Chips",
+        "calories": 98
+      },
+      {
+        "name": "Tuna",
+        "calories": 43
+      },
+      {
+        "name": "Flour Tortilla",
+        "calories": 211
+      },
+      {
+        "name": "Hoagie Roll",
+        "calories": 176
+      },
+      {
+        "name": "White Bread",
+        "calories": 62
+      },
+      {
+        "name": "Whole Wheat Bread",
+        "calories": 65
+      },
+      {
+        "name": "Chicken Tinga",
+        "calories": 126
+      },
+      {
+        "name": "Guacamole",
+        "calories": 37
+      },
+      {
+        "name": "Queso Dip",
+        "calories": 356
+      },
+      {
+        "name": "Curried Chicken",
+        "calories": 75
+      },
+      {
+        "name": "Minestrone Soup",
+        "calories": 104
+      },
+      {
+        "name": "Chili Con Carne",
+        "calories": 183
+      },
+      {
+        "name": "Broccoli Cheddar Soup",
+        "calories": 209
+      },
+      {
+        "name": "Vanilla Cake",
+        "calories": 313
+      },
+      {
+        "name": "Chocolate Brownie",
+        "calories": 187
+      },
+      {
+        "name": "Oatmeal Cookie",
+        "calories": 175
+      },
+      {
+        "name": "Cinnamon-Honey Granola",
+        "calories": 1792
+      },
+      {
+        "name": "Whipped Topping",
+        "calories": 107
+      },
+      {
+        "name": "Chocolate Chips",
+        "calories": 50
+      },
+      {
+        "name": "Belgian Waffle Mix",
+        "calories": 452
+      },
+      {
+        "name": "Bacon Pieces",
+        "calories": 72
+      },
+      {
+        "name": "Chopped Hard-Cooked Egg",
+        "calories": 66
+      },
+      {
+        "name": "Cucumbers",
+        "calories": 4
+      },
+      {
+        "name": "Grape Tomatoes",
+        "calories": 8
+      },
+      {
+        "name": "Romaine Lettuce",
+        "calories": 7
+      },
+      {
+        "name": "Spring Salad Mix",
+        "calories": 2
+      },
+      {
+        "name": "Banana",
+        "calories": 57
+      }
     ],
     "Dinner": [
-      "Eggplant Parmesan",
-      "Chicken Parmesan",
-      "Risotto",
-      "Classic Cheese Pizza",
-      "White Pizza",
-      "Garlic Herb Breadstick",
-      "Baked Three Cheese Penne",
-      "Premium Pizza Sauce",
-      "Grilled Black Bean Burger",
-      "Classic Hot Dog",
-      "Fresh Cut French Fries UNCP",
-      "Smash Burger",
-      "American Cheese",
-      "Cheddar Cheese",
-      "Swiss Cheese",
-      "Lettuce",
-      "Caribbean Jerk Chicken Mango Salad",
-      "Steamed Fresh Broccoli",
-      "Roasted Grape Tomatoes",
-      "Roasted Mushrooms",
-      "Cajun Cream Sauce",
-      "Grilled Italian Sausage",
-      "Shredded Parmesan",
-      "Cavatappi",
-      "Penne",
-      "Baby Spinach",
-      "Fresh Garlic",
-      "Green Peas",
-      "Sauteed Onions",
-      "Curried Rutabaga Filet",
-      "Curried Chicken",
-      "Raita",
-      "Broccoli Florets",
-      "Roasted Chickpeas",
-      "Garlic Roasted Vegetables",
-      "Signature Chips",
-      "Egg Salad",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Ham",
-      "Provolone Cheese",
-      "Roast Beef",
-      "Turkey Breast",
-      "Green Leaf Lettuce",
-      "Hummus",
-      "Minestrone Soup",
-      "Chili Con Carne",
-      "Broccoli Cheddar Soup",
-      "Lucky Charms® Bar",
-      "Chocolate Chip Cookie",
-      "Cinnamon-Honey Granola",
-      "Whipped Topping",
-      "Chocolate Chips",
-      "Belgian Waffle Mix",
-      "Chocolate Syrup",
-      "Dried Cranberries",
-      "Pancake Syrup",
-      "Bacon Pieces",
-      "Chopped Hard-Cooked Egg",
-      "Cucumbers",
-      "Grape Tomatoes",
-      "Romaine Lettuce",
-      "Spring Salad Mix",
-      "Shredded Cheddar Cheese",
-      "Shredded Carrots",
-      "Banana",
-      "Mango"
+      {
+        "name": "Eggplant Parmesan",
+        "calories": 394
+      },
+      {
+        "name": "Chicken Parmesan",
+        "calories": 298
+      },
+      {
+        "name": "Risotto",
+        "calories": 158
+      },
+      {
+        "name": "Classic Cheese Pizza",
+        "calories": 269
+      },
+      {
+        "name": "White Pizza",
+        "calories": 323
+      },
+      {
+        "name": "Garlic Herb Breadstick",
+        "calories": 174
+      },
+      {
+        "name": "Baked Three Cheese Penne",
+        "calories": 298
+      },
+      {
+        "name": "Premium Pizza Sauce",
+        "calories": 10
+      },
+      {
+        "name": "Grilled Black Bean Burger",
+        "calories": 257
+      },
+      {
+        "name": "Classic Hot Dog",
+        "calories": 304
+      },
+      {
+        "name": "Fresh Cut French Fries UNCP",
+        "calories": 151
+      },
+      {
+        "name": "Smash Burger",
+        "calories": 341
+      },
+      {
+        "name": "Caribbean Jerk Chicken Mango Salad",
+        "calories": 267
+      },
+      {
+        "name": "Steamed Fresh Broccoli",
+        "calories": 18
+      },
+      {
+        "name": "Roasted Grape Tomatoes",
+        "calories": 347
+      },
+      {
+        "name": "Roasted Mushrooms",
+        "calories": 94
+      },
+      {
+        "name": "Cajun Cream Sauce",
+        "calories": 210
+      },
+      {
+        "name": "Curried Rutabaga Filet",
+        "calories": 208
+      },
+      {
+        "name": "Curried Chicken",
+        "calories": 75
+      },
+      {
+        "name": "Raita",
+        "calories": 28
+      },
+      {
+        "name": "Garlic Roasted Vegetables",
+        "calories": 56
+      },
+      {
+        "name": "Signature Chips",
+        "calories": 98
+      },
+      {
+        "name": "Egg Salad",
+        "calories": 129
+      },
+      {
+        "name": "Flour Tortilla",
+        "calories": 211
+      },
+      {
+        "name": "Hoagie Roll",
+        "calories": 176
+      },
+      {
+        "name": "White Bread",
+        "calories": 129
+      },
+      {
+        "name": "Minestrone Soup",
+        "calories": 104
+      },
+      {
+        "name": "Chili Con Carne",
+        "calories": 183
+      },
+      {
+        "name": "Broccoli Cheddar Soup",
+        "calories": 209
+      },
+      {
+        "name": "Lucky Charms® Bar",
+        "calories": 145
+      },
+      {
+        "name": "Chocolate Chip Cookie",
+        "calories": 121
+      },
+      {
+        "name": "Cinnamon-Honey Granola",
+        "calories": 1792
+      },
+      {
+        "name": "Whipped Topping",
+        "calories": 107
+      },
+      {
+        "name": "Chocolate Chips",
+        "calories": 50
+      },
+      {
+        "name": "Belgian Waffle Mix",
+        "calories": 452
+      },
+      {
+        "name": "Bacon Pieces",
+        "calories": 72
+      },
+      {
+        "name": "Chopped Hard-Cooked Egg",
+        "calories": 66
+      },
+      {
+        "name": "Cucumbers",
+        "calories": 4
+      },
+      {
+        "name": "Grape Tomatoes",
+        "calories": 8
+      },
+      {
+        "name": "Romaine Lettuce",
+        "calories": 7
+      },
+      {
+        "name": "Spring Salad Mix",
+        "calories": 2
+      },
+      {
+        "name": "Banana",
+        "calories": 57
+      }
     ]
   },
   "Friday": {
     "Breakfast": [
-      "Scrambled Eggs",
-      "Pork Sausage Patty",
-      "Turkey Sausage Link",
-      "Hash Brown Potatoes",
-      "Southern Biscuit",
-      "Grits",
-      "Old Fashioned Oatmeal",
-      "Sausage Gravy",
-      "Egg & Cheddar Quesadilla",
-      "French Toast",
-      "Bagel",
-      "Chive Cream Cheese",
-      "Citrus Honey Butter",
-      "Grape Jelly",
-      "Nutella®",
-      "Peanut Butter",
-      "Strawberry Cream Cheese",
-      "Whipped Butter",
-      "Whipped Cream Cheese",
-      "Chocolate Chip Scone",
-      "Eggs",
-      "Shredded Cheddar Cheese",
-      "Baby Spinach"
+      {
+        "name": "Scrambled Eggs",
+        "calories": 142
+      },
+      {
+        "name": "Pork Sausage Patty",
+        "calories": 180
+      },
+      {
+        "name": "Turkey Sausage Link",
+        "calories": 97
+      },
+      {
+        "name": "Hash Brown Potatoes",
+        "calories": 124
+      },
+      {
+        "name": "Southern Biscuit",
+        "calories": 186
+      },
+      {
+        "name": "Grits",
+        "calories": 90
+      },
+      {
+        "name": "Old Fashioned Oatmeal",
+        "calories": 106
+      },
+      {
+        "name": "Sausage Gravy",
+        "calories": 61
+      },
+      {
+        "name": "Egg & Cheddar Quesadilla",
+        "calories": 699
+      },
+      {
+        "name": "French Toast",
+        "calories": 161
+      },
+      {
+        "name": "Bagel",
+        "calories": 175
+      },
+      {
+        "name": "Chocolate Chip Scone",
+        "calories": 169
+      }
     ],
     "Lunch": [
-      "Rotisserie-Style Chicken",
-      "Plant-Based Chicken Tenders",
-      "Fried Chicken",
-      "Southern Collard Greens",
-      "Buttered Corn on the Cob",
-      "Crispy Okra",
-      "Cornbread",
-      "Classic Cheese Pizza",
-      "Hawaiian Pizza",
-      "Garlic Herb Breadstick",
-      "Premium Pizza Sauce",
-      "Grilled Black Bean Burger",
-      "Classic Hot Dog",
-      "Fresh Cut French Fries UNCP",
-      "Smash Burger",
-      "American Cheese",
-      "Lettuce",
-      "Steamed Fresh Broccoli",
-      "Roasted Grape Tomatoes",
-      "Roasted Mushrooms",
-      "Cajun Cream Sauce",
-      "Grilled Italian Sausage",
-      "Shredded Parmesan",
-      "Cavatappi",
-      "Penne",
-      "Baby Spinach",
-      "Fresh Garlic",
-      "Green Peas",
-      "Sauteed Onions",
-      "Garlic Roasted Vegetables",
-      "Signature Chips",
-      "Tuna",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Whole Wheat Bread",
-      "Ham",
-      "Provolone Cheese",
-      "Roast Beef",
-      "Swiss Cheese",
-      "Turkey Breast",
-      "Green Leaf Lettuce",
-      "Hummus",
-      "Seasoned Shrimp",
-      "Balsamic Onions",
-      "Olive Topping",
-      "Garlic and Basil-Infused Olive Oil",
-      "Sun-Dried Tomatoes",
-      "Chipotle Chicken Tortilla Soup",
-      "Vegetable Soup",
-      "Blueberry Buckle",
-      "Glazed Strawberry Bars",
-      "Peanut Butter Swirl Brownie",
-      "Chocolate Chip Cookie",
-      "Cinnamon-Honey Granola",
-      "Whipped Topping",
-      "Chocolate Chips",
-      "Belgian Waffle Mix",
-      "Chocolate Syrup",
-      "Dried Cranberries",
-      "Pancake Syrup",
-      "Bacon Pieces",
-      "Chopped Hard-Cooked Egg",
-      "Cucumbers",
-      "Grape Tomatoes",
-      "Romaine Lettuce",
-      "Spring Salad Mix",
-      "Shredded Cheddar Cheese",
-      "Shredded Carrots",
-      "Banana",
-      "Mango"
+      {
+        "name": "Rotisserie-Style Chicken",
+        "calories": 263
+      },
+      {
+        "name": "Plant-Based Chicken Tenders",
+        "calories": 388
+      },
+      {
+        "name": "Fried Chicken",
+        "calories": 344
+      },
+      {
+        "name": "Southern Collard Greens",
+        "calories": 62
+      },
+      {
+        "name": "Buttered Corn on the Cob",
+        "calories": 127
+      },
+      {
+        "name": "Crispy Okra",
+        "calories": 64
+      },
+      {
+        "name": "Cornbread",
+        "calories": 146
+      },
+      {
+        "name": "Classic Cheese Pizza",
+        "calories": 269
+      },
+      {
+        "name": "Hawaiian Pizza",
+        "calories": 377
+      },
+      {
+        "name": "Garlic Herb Breadstick",
+        "calories": 174
+      },
+      {
+        "name": "Premium Pizza Sauce",
+        "calories": 10
+      },
+      {
+        "name": "Grilled Black Bean Burger",
+        "calories": 257
+      },
+      {
+        "name": "Classic Hot Dog",
+        "calories": 304
+      },
+      {
+        "name": "Fresh Cut French Fries UNCP",
+        "calories": 151
+      },
+      {
+        "name": "Smash Burger",
+        "calories": 341
+      },
+      {
+        "name": "Steamed Fresh Broccoli",
+        "calories": 18
+      },
+      {
+        "name": "Roasted Grape Tomatoes",
+        "calories": 347
+      },
+      {
+        "name": "Roasted Mushrooms",
+        "calories": 94
+      },
+      {
+        "name": "Cajun Cream Sauce",
+        "calories": 210
+      },
+      {
+        "name": "Garlic Roasted Vegetables",
+        "calories": 56
+      },
+      {
+        "name": "Signature Chips",
+        "calories": 98
+      },
+      {
+        "name": "Tuna",
+        "calories": 43
+      },
+      {
+        "name": "Flour Tortilla",
+        "calories": 211
+      },
+      {
+        "name": "Hoagie Roll",
+        "calories": 176
+      },
+      {
+        "name": "White Bread",
+        "calories": 62
+      },
+      {
+        "name": "Whole Wheat Bread",
+        "calories": 65
+      },
+      {
+        "name": "Penne",
+        "calories": 99
+      },
+      {
+        "name": "Seasoned Shrimp",
+        "calories": 335
+      },
+      {
+        "name": "Balsamic Onions",
+        "calories": 50
+      },
+      {
+        "name": "Olive Topping",
+        "calories": 73
+      },
+      {
+        "name": "Garlic and Basil-Infused Olive Oil",
+        "calories": 251
+      },
+      {
+        "name": "Chipotle Chicken Tortilla Soup",
+        "calories": 95
+      },
+      {
+        "name": "Vegetable Soup",
+        "calories": 72
+      },
+      {
+        "name": "Blueberry Buckle",
+        "calories": 246
+      },
+      {
+        "name": "Glazed Strawberry Bars",
+        "calories": 380
+      },
+      {
+        "name": "Peanut Butter Swirl Brownie",
+        "calories": 236
+      },
+      {
+        "name": "Chocolate Chip Cookie",
+        "calories": 121
+      },
+      {
+        "name": "Cinnamon-Honey Granola",
+        "calories": 1792
+      },
+      {
+        "name": "Whipped Topping",
+        "calories": 107
+      },
+      {
+        "name": "Chocolate Chips",
+        "calories": 50
+      },
+      {
+        "name": "Belgian Waffle Mix",
+        "calories": 452
+      },
+      {
+        "name": "Bacon Pieces",
+        "calories": 72
+      },
+      {
+        "name": "Chopped Hard-Cooked Egg",
+        "calories": 66
+      },
+      {
+        "name": "Cucumbers",
+        "calories": 4
+      },
+      {
+        "name": "Grape Tomatoes",
+        "calories": 8
+      },
+      {
+        "name": "Romaine Lettuce",
+        "calories": 7
+      },
+      {
+        "name": "Spring Salad Mix",
+        "calories": 2
+      },
+      {
+        "name": "Banana",
+        "calories": 57
+      }
     ],
     "Dinner": [
-      "Chicken & Mushroom Cavatappi",
-      "Chicken Fajita Pizza",
-      "Classic Cheese Pizza",
-      "Garlic Herb Breadstick",
-      "Premium Pizza Sauce",
-      "Thai Red Curry Chicken",
-      "Jerk Sweet Potatoes Stir Fry",
-      "Ginger Honey Glazed Carrots",
-      "Grilled Black Bean Burger",
-      "Classic Hot Dog",
-      "Fresh Cut French Fries UNCP",
-      "Smash Burger",
-      "American Cheese",
-      "Cheddar Cheese",
-      "Swiss Cheese",
-      "Lettuce",
-      "California Roll",
-      "Strawberry Wonton Napoleon",
-      "Marinated Artichoke Hearts",
-      "Penne",
-      "Whole Grain Penne",
-      "Seasoned Shrimp",
-      "Balsamic Onions",
-      "Olive Topping",
-      "Garlic and Basil-Infused Olive Oil",
-      "Grilled Chicken",
-      "Sun-Dried Tomatoes",
-      "Steamed Fresh Broccoli",
-      "Roasted Grape Tomatoes",
-      "Roasted Mushrooms",
-      "Alfredo Sauce",
-      "Grilled Italian Sausage",
-      "Shredded Parmesan",
-      "Cavatappi",
-      "Baby Spinach",
-      "Fresh Garlic",
-      "Green Peas",
-      "Sauteed Onions",
-      "Garlic Roasted Vegetables",
-      "Signature Chips",
-      "Egg Salad",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Ham",
-      "Provolone Cheese",
-      "Roast Beef",
-      "Turkey Breast",
-      "Green Leaf Lettuce",
-      "Hummus",
-      "Chipotle Chicken Tortilla Soup",
-      "Vegetable Soup",
-      "Lucky Charms® Bar",
-      "Oatmeal Raisin Cookie",
-      "Cinnamon-Honey Granola",
-      "Whipped Topping",
-      "Chocolate Chips",
-      "Belgian Waffle Mix",
-      "Chocolate Syrup",
-      "Dried Cranberries",
-      "Pancake Syrup",
-      "Bacon Pieces",
-      "Chopped Hard-Cooked Egg",
-      "Cucumbers",
-      "Grape Tomatoes",
-      "Romaine Lettuce",
-      "Spring Salad Mix",
-      "Shredded Cheddar Cheese",
-      "Shredded Carrots",
-      "Banana",
-      "Mango"
+      {
+        "name": "Chicken & Mushroom Cavatappi",
+        "calories": 292
+      },
+      {
+        "name": "Chicken Fajita Pizza",
+        "calories": 323
+      },
+      {
+        "name": "Classic Cheese Pizza",
+        "calories": 269
+      },
+      {
+        "name": "Garlic Herb Breadstick",
+        "calories": 174
+      },
+      {
+        "name": "Premium Pizza Sauce",
+        "calories": 10
+      },
+      {
+        "name": "Thai Red Curry Chicken",
+        "calories": 147
+      },
+      {
+        "name": "Jerk Sweet Potatoes Stir Fry",
+        "calories": 323
+      },
+      {
+        "name": "Ginger Honey Glazed Carrots",
+        "calories": 107
+      },
+      {
+        "name": "Grilled Black Bean Burger",
+        "calories": 257
+      },
+      {
+        "name": "Classic Hot Dog",
+        "calories": 304
+      },
+      {
+        "name": "Fresh Cut French Fries UNCP",
+        "calories": 151
+      },
+      {
+        "name": "Smash Burger",
+        "calories": 341
+      },
+      {
+        "name": "California Roll",
+        "calories": 102
+      },
+      {
+        "name": "Strawberry Wonton Napoleon",
+        "calories": 142
+      },
+      {
+        "name": "Marinated Artichoke Hearts",
+        "calories": 135
+      },
+      {
+        "name": "Penne",
+        "calories": 99
+      },
+      {
+        "name": "Whole Grain Penne",
+        "calories": 87
+      },
+      {
+        "name": "Seasoned Shrimp",
+        "calories": 335
+      },
+      {
+        "name": "Balsamic Onions",
+        "calories": 50
+      },
+      {
+        "name": "Olive Topping",
+        "calories": 73
+      },
+      {
+        "name": "Garlic and Basil-Infused Olive Oil",
+        "calories": 251
+      },
+      {
+        "name": "Steamed Fresh Broccoli",
+        "calories": 18
+      },
+      {
+        "name": "Roasted Grape Tomatoes",
+        "calories": 347
+      },
+      {
+        "name": "Roasted Mushrooms",
+        "calories": 94
+      },
+      {
+        "name": "Alfredo Sauce",
+        "calories": 33
+      },
+      {
+        "name": "Garlic Roasted Vegetables",
+        "calories": 56
+      },
+      {
+        "name": "Signature Chips",
+        "calories": 98
+      },
+      {
+        "name": "Egg Salad",
+        "calories": 129
+      },
+      {
+        "name": "Flour Tortilla",
+        "calories": 211
+      },
+      {
+        "name": "Hoagie Roll",
+        "calories": 176
+      },
+      {
+        "name": "White Bread",
+        "calories": 129
+      },
+      {
+        "name": "Chipotle Chicken Tortilla Soup",
+        "calories": 95
+      },
+      {
+        "name": "Vegetable Soup",
+        "calories": 72
+      },
+      {
+        "name": "Lucky Charms® Bar",
+        "calories": 145
+      },
+      {
+        "name": "Oatmeal Raisin Cookie",
+        "calories": 115
+      },
+      {
+        "name": "Cinnamon-Honey Granola",
+        "calories": 1792
+      },
+      {
+        "name": "Whipped Topping",
+        "calories": 107
+      },
+      {
+        "name": "Chocolate Chips",
+        "calories": 50
+      },
+      {
+        "name": "Belgian Waffle Mix",
+        "calories": 452
+      },
+      {
+        "name": "Bacon Pieces",
+        "calories": 72
+      },
+      {
+        "name": "Chopped Hard-Cooked Egg",
+        "calories": 66
+      },
+      {
+        "name": "Cucumbers",
+        "calories": 4
+      },
+      {
+        "name": "Grape Tomatoes",
+        "calories": 8
+      },
+      {
+        "name": "Romaine Lettuce",
+        "calories": 7
+      },
+      {
+        "name": "Spring Salad Mix",
+        "calories": 2
+      },
+      {
+        "name": "Banana",
+        "calories": 57
+      }
     ]
   },
   "Saturday": {
     "Breakfast": [
-      "Tofu Parmesan",
-      "Scrambled Eggs",
-      "Grilled Chicken Fajitas",
-      "Pork Sausage Links",
-      "Turkey Bacon",
-      "French Toast",
-      "Grits",
-      "Old Fashioned Oatmeal",
-      "Fried Egg",
-      "Classic Cheese Pizza",
-      "Garlic Herb Breadstick",
-      "Three Cheese Penne",
-      "Classic Hot Dog",
-      "Fresh Cut French Fries UNCP",
-      "Smash Burger",
-      "American Cheese",
-      "Cheddar Cheese",
-      "Swiss Cheese",
-      "Lettuce",
-      "Garlic Roasted Vegetables",
-      "Signature Chips",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Chicken Salad",
-      "Ham",
-      "Provolone Cheese",
-      "Roast Beef",
-      "Turkey Breast",
-      "Green Leaf Lettuce",
-      "O'Brien Potatoes",
-      "Seasoned Home Fries",
-      "Egg",
-      "Incogmeato™ Sausage Patty",
-      "Just® Egg",
-      "Egg Whites",
-      "Eggs",
-      "Shredded Cheddar Cheese",
-      "Turkey Sausage Patty",
-      "Baby Spinach",
-      "Bagel",
-      "Chive Cream Cheese",
-      "Citrus Honey Butter",
-      "Grape Jelly",
-      "Nutella®",
-      "Peanut Butter",
-      "Strawberry Cream Cheese",
-      "Whipped Butter",
-      "Whipped Cream Cheese",
-      "Chocolate Chip Cookie",
-      "Chocolate Crinkle Whoopie Pie",
-      "Cranberry Oatmeal Cookie"
+      {
+        "name": "Tofu Parmesan",
+        "calories": 374
+      },
+      {
+        "name": "Scrambled Eggs",
+        "calories": 142
+      },
+      {
+        "name": "Grilled Chicken Fajitas",
+        "calories": 417
+      },
+      {
+        "name": "Pork Sausage Links",
+        "calories": 230
+      },
+      {
+        "name": "Turkey Bacon",
+        "calories": 44
+      },
+      {
+        "name": "French Toast",
+        "calories": 161
+      },
+      {
+        "name": "Grits",
+        "calories": 90
+      },
+      {
+        "name": "Old Fashioned Oatmeal",
+        "calories": 106
+      },
+      {
+        "name": "Fried Egg",
+        "calories": 100
+      },
+      {
+        "name": "Classic Cheese Pizza",
+        "calories": 269
+      },
+      {
+        "name": "Garlic Herb Breadstick",
+        "calories": 174
+      },
+      {
+        "name": "Classic Hot Dog",
+        "calories": 304
+      },
+      {
+        "name": "Fresh Cut French Fries UNCP",
+        "calories": 151
+      },
+      {
+        "name": "Smash Burger",
+        "calories": 341
+      },
+      {
+        "name": "Garlic Roasted Vegetables",
+        "calories": 56
+      },
+      {
+        "name": "Signature Chips",
+        "calories": 98
+      },
+      {
+        "name": "Flour Tortilla",
+        "calories": 211
+      },
+      {
+        "name": "Hoagie Roll",
+        "calories": 176
+      },
+      {
+        "name": "White Bread",
+        "calories": 129
+      },
+      {
+        "name": "Chicken Salad",
+        "calories": 281
+      },
+      {
+        "name": "O'Brien Potatoes",
+        "calories": 140
+      },
+      {
+        "name": "Seasoned Home Fries",
+        "calories": 92
+      },
+      {
+        "name": "Egg",
+        "calories": 70
+      },
+      {
+        "name": "Incogmeato™ Sausage Patty",
+        "calories": 145
+      },
+      {
+        "name": "Just® Egg",
+        "calories": 633
+      },
+      {
+        "name": "Bagel",
+        "calories": 175
+      },
+      {
+        "name": "Chocolate Chip Cookie",
+        "calories": 121
+      },
+      {
+        "name": "Chocolate Crinkle Whoopie Pie",
+        "calories": 262
+      },
+      {
+        "name": "Cranberry Oatmeal Cookie",
+        "calories": 262
+      }
     ],
     "Lunch": [
-      "Tofu Parmesan",
-      "Scrambled Eggs",
-      "Grilled Chicken Fajitas",
-      "Pork Sausage Links",
-      "Turkey Bacon",
-      "French Toast",
-      "Grits",
-      "Old Fashioned Oatmeal",
-      "Fried Egg",
-      "Classic Cheese Pizza",
-      "Garlic Herb Breadstick",
-      "Three Cheese Penne",
-      "Classic Hot Dog",
-      "Fresh Cut French Fries UNCP",
-      "Smash Burger",
-      "American Cheese",
-      "Cheddar Cheese",
-      "Swiss Cheese",
-      "Lettuce",
-      "Garlic Roasted Vegetables",
-      "Signature Chips",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Chicken Salad",
-      "Ham",
-      "Provolone Cheese",
-      "Roast Beef",
-      "Turkey Breast",
-      "Green Leaf Lettuce",
-      "O'Brien Potatoes",
-      "Seasoned Home Fries",
-      "Egg",
-      "Incogmeato™ Sausage Patty",
-      "Just® Egg",
-      "Egg Whites",
-      "Eggs",
-      "Shredded Cheddar Cheese",
-      "Turkey Sausage Patty",
-      "Baby Spinach",
-      "Chicken Noodle Soup",
-      "Bagel",
-      "Chive Cream Cheese",
-      "Citrus Honey Butter",
-      "Grape Jelly",
-      "Nutella®",
-      "Peanut Butter",
-      "Strawberry Cream Cheese",
-      "Whipped Butter",
-      "Whipped Cream Cheese",
-      "Chocolate Chip Cookie",
-      "Chocolate Crinkle Whoopie Pie",
-      "Cranberry Oatmeal Cookie",
-      "Cinnamon-Honey Granola",
-      "Whipped Topping",
-      "Chocolate Chips",
-      "Belgian Waffle Mix",
-      "Chocolate Syrup",
-      "Dried Cranberries",
-      "Pancake Syrup",
-      "Bacon Pieces",
-      "Chopped Hard-Cooked Egg",
-      "Cucumbers",
-      "Grape Tomatoes",
-      "Romaine Lettuce",
-      "Spring Salad Mix",
-      "Shredded Carrots",
-      "Banana",
-      "Mango"
+      {
+        "name": "Tofu Parmesan",
+        "calories": 374
+      },
+      {
+        "name": "Scrambled Eggs",
+        "calories": 142
+      },
+      {
+        "name": "Grilled Chicken Fajitas",
+        "calories": 417
+      },
+      {
+        "name": "Pork Sausage Links",
+        "calories": 230
+      },
+      {
+        "name": "Turkey Bacon",
+        "calories": 44
+      },
+      {
+        "name": "French Toast",
+        "calories": 161
+      },
+      {
+        "name": "Grits",
+        "calories": 90
+      },
+      {
+        "name": "Old Fashioned Oatmeal",
+        "calories": 106
+      },
+      {
+        "name": "Fried Egg",
+        "calories": 100
+      },
+      {
+        "name": "Classic Cheese Pizza",
+        "calories": 269
+      },
+      {
+        "name": "Garlic Herb Breadstick",
+        "calories": 174
+      },
+      {
+        "name": "Classic Hot Dog",
+        "calories": 304
+      },
+      {
+        "name": "Fresh Cut French Fries UNCP",
+        "calories": 151
+      },
+      {
+        "name": "Smash Burger",
+        "calories": 341
+      },
+      {
+        "name": "Garlic Roasted Vegetables",
+        "calories": 56
+      },
+      {
+        "name": "Signature Chips",
+        "calories": 98
+      },
+      {
+        "name": "Flour Tortilla",
+        "calories": 211
+      },
+      {
+        "name": "Hoagie Roll",
+        "calories": 176
+      },
+      {
+        "name": "White Bread",
+        "calories": 129
+      },
+      {
+        "name": "Chicken Salad",
+        "calories": 281
+      },
+      {
+        "name": "O'Brien Potatoes",
+        "calories": 140
+      },
+      {
+        "name": "Seasoned Home Fries",
+        "calories": 92
+      },
+      {
+        "name": "Egg",
+        "calories": 70
+      },
+      {
+        "name": "Incogmeato™ Sausage Patty",
+        "calories": 145
+      },
+      {
+        "name": "Just® Egg",
+        "calories": 633
+      },
+      {
+        "name": "Chicken Noodle Soup",
+        "calories": 86
+      },
+      {
+        "name": "Bagel",
+        "calories": 175
+      },
+      {
+        "name": "Chocolate Chip Cookie",
+        "calories": 121
+      },
+      {
+        "name": "Chocolate Crinkle Whoopie Pie",
+        "calories": 262
+      },
+      {
+        "name": "Cranberry Oatmeal Cookie",
+        "calories": 262
+      },
+      {
+        "name": "Cinnamon-Honey Granola",
+        "calories": 1792
+      },
+      {
+        "name": "Whipped Topping",
+        "calories": 107
+      },
+      {
+        "name": "Chocolate Chips",
+        "calories": 50
+      },
+      {
+        "name": "Belgian Waffle Mix",
+        "calories": 452
+      },
+      {
+        "name": "Bacon Pieces",
+        "calories": 72
+      },
+      {
+        "name": "Chopped Hard-Cooked Egg",
+        "calories": 66
+      },
+      {
+        "name": "Cucumbers",
+        "calories": 4
+      },
+      {
+        "name": "Grape Tomatoes",
+        "calories": 8
+      },
+      {
+        "name": "Romaine Lettuce",
+        "calories": 7
+      },
+      {
+        "name": "Spring Salad Mix",
+        "calories": 2
+      },
+      {
+        "name": "Banana",
+        "calories": 57
+      }
     ],
     "Dinner": [
-      "Korean BBQ Tofu",
-      "Baked Potato Wedges",
-      "Steamed Yellow Squash",
-      "Classic Cheese Pizza",
-      "Garlic Herb Breadstick",
-      "Premium Pizza Sauce",
-      "Grilled Black Bean Burger",
-      "Classic Hot Dog",
-      "Fresh Cut French Fries UNCP",
-      "Smash Burger",
-      "American Cheese",
-      "Cheddar Cheese",
-      "Swiss Cheese",
-      "Lettuce",
-      "Steamed Fresh Broccoli",
-      "Roasted Grape Tomatoes",
-      "Roasted Mushrooms",
-      "Alfredo Sauce",
-      "Grilled Italian Sausage",
-      "Penne",
-      "Baby Spinach",
-      "Garlic Roasted Vegetables",
-      "Signature Chips",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Chicken Salad",
-      "Ham",
-      "Provolone Cheese",
-      "Roast Beef",
-      "Turkey Breast",
-      "Green Leaf Lettuce",
-      "Hummus",
-      "Chicken Noodle Soup",
-      "Chocolate Brownie",
-      "Oatmeal Raisin Cookie",
-      "Cinnamon-Honey Granola",
-      "Whipped Topping",
-      "Chocolate Chips",
-      "Belgian Waffle Mix",
-      "Chocolate Syrup",
-      "Dried Cranberries",
-      "Pancake Syrup",
-      "Bacon Pieces",
-      "Chopped Hard-Cooked Egg",
-      "Cucumbers",
-      "Grape Tomatoes",
-      "Romaine Lettuce",
-      "Spring Salad Mix",
-      "Shredded Cheddar Cheese",
-      "Shredded Carrots",
-      "Banana",
-      "Mango"
-    ]
-  },
-  "Saturday": {
-    "Breakfast": [
-      "Tofu Parmesan",
-      "Scrambled Eggs",
-      "Grilled Chicken Fajitas",
-      "Southwest Green Beans",
-      "Pork Sausage Links",
-      "Turkey Bacon",
-      "Spanish Rice",
-      "French Toast",
-      "Grits",
-      "Old Fashioned Oatmeal",
-      "Fried Egg",
-      "Classic Cheese Pizza",
-      "Pepperoni Pizza",
-      "Garlic Herb Breadstick",
-      "Three Cheese Penne",
-      "Classic Hot Dog",
-      "Fresh Cut French Fries UNCP",
-      "Blueberry Buttermilk Pancakes",
-      "Smash Burger",
-      "Dill Pickle Slices",
-      "American Cheese",
-      "Cheddar Cheese",
-      "Swiss Cheese",
-      "Lettuce",
-      "Sliced Red Onions",
-      "Sliced Tomatoes",
-      "Garlic Roasted Vegetables",
-      "Signature Chips",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Chicken Salad",
-      "Ham",
-      "Pepper Jack Cheese",
-      "Provolone Cheese",
-      "Roast Beef",
-      "Turkey Breast",
-      "Banana Peppers",
-      "Green Leaf Lettuce",
-      "Sliced Onions",
-      "Chipotle Mayonnaise",
-      "Dijon Mustard",
-      "Mayonnaise",
-      "Oil & Vinegar",
-      "O'Brien Potatoes",
-      "Cinnamon-Sugar Donut",
-      "Seasoned Home Fries",
-      "Egg",
-      "Incogmeato™ Sausage Patty",
-      "Just® Egg",
-      "Diced Ham",
-      "Diced Turkey",
-      "Egg Whites",
-      "Eggs",
-      "Shredded Cheddar Cheese",
-      "Turkey Sausage Patty",
-      "Baby Spinach",
-      "Diced Onions",
-      "Sliced Mixed Bell Peppers",
-      "Sliced Mushrooms",
-      "Sliced Scallions",
-      "Bagel",
-      "Chive Cream Cheese",
-      "Citrus Honey Butter",
-      "Grape Jelly",
-      "Nutella®",
-      "Peanut Butter",
-      "Strawberry Cream Cheese",
-      "Whipped Butter",
-      "Whipped Cream Cheese",
-      "Chocolate Chip Cookie",
-      "Chocolate Crinkle Whoopie Pie",
-      "Cranberry Oatmeal Cookie"
-    ],
-    "Lunch": [
-      "Tofu Parmesan",
-      "Scrambled Eggs",
-      "Grilled Chicken Fajitas",
-      "Southwest Green Beans",
-      "Pork Sausage Links",
-      "Turkey Bacon",
-      "Spanish Rice",
-      "French Toast",
-      "Grits",
-      "Old Fashioned Oatmeal",
-      "Fried Egg",
-      "Classic Cheese Pizza",
-      "Pepperoni Pizza",
-      "Garlic Herb Breadstick",
-      "Three Cheese Penne",
-      "Classic Hot Dog",
-      "Fresh Cut French Fries UNCP",
-      "Blueberry Buttermilk Pancakes",
-      "Smash Burger",
-      "Dill Pickle Slices",
-      "American Cheese",
-      "Cheddar Cheese",
-      "Swiss Cheese",
-      "Lettuce",
-      "Sliced Red Onions",
-      "Sliced Tomatoes",
-      "Garlic Roasted Vegetables",
-      "Signature Chips",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Chicken Salad",
-      "Ham",
-      "Pepper Jack Cheese",
-      "Provolone Cheese",
-      "Roast Beef",
-      "Turkey Breast",
-      "Banana Peppers",
-      "Green Leaf Lettuce",
-      "Sliced Onions",
-      "Chipotle Mayonnaise",
-      "Dijon Mustard",
-      "Mayonnaise",
-      "Oil & Vinegar",
-      "O'Brien Potatoes",
-      "Cinnamon-Sugar Donut",
-      "Seasoned Home Fries",
-      "Egg",
-      "Incogmeato™ Sausage Patty",
-      "Just® Egg",
-      "Diced Ham",
-      "Diced Turkey",
-      "Egg Whites",
-      "Eggs",
-      "Shredded Cheddar Cheese",
-      "Turkey Sausage Patty",
-      "Baby Spinach",
-      "Diced Onions",
-      "Sliced Mixed Bell Peppers",
-      "Sliced Mushrooms",
-      "Sliced Scallions",
-      "Chicken Noodle Soup",
-      "Bagel",
-      "Chive Cream Cheese",
-      "Citrus Honey Butter",
-      "Grape Jelly",
-      "Nutella®",
-      "Peanut Butter",
-      "Strawberry Cream Cheese",
-      "Whipped Butter",
-      "Whipped Cream Cheese",
-      "Chocolate Chip Cookie",
-      "Chocolate Crinkle Whoopie Pie",
-      "Cranberry Oatmeal Cookie",
-      "Cinnamon-Honey Granola",
-      "Cinnamon-Sugar",
-      "Whipped Topping",
-      "Chocolate Chips",
-      "Powdered Sugar",
-      "Belgian Waffle Mix",
-      "Chocolate Syrup",
-      "Dried Cranberries",
-      "Pancake Syrup",
-      "Bacon Pieces",
-      "Chopped Hard-Cooked Egg",
-      "Sunflower Seeds",
-      "Cucumbers",
-      "Grape Tomatoes",
-      "Romaine Lettuce",
-      "Spring Salad Mix",
-      "Blue Cheese Dressing",
-      "Greek Vinaigrette",
-      "Lite Italian Dressing",
-      "Black Beans",
-      "Shredded Carrots",
-      "Ranch Dressing",
-      "Banana",
-      "Diced Pineapple",
-      "Mandarin Oranges",
-      "Apple Juice",
-      "Mango",
-      "Oat Milk"
-    ],
-    "Dinner": [
-      "Spice-Rubbed Pork Loin",
-      "Korean BBQ Tofu",
-      "Fresh Whole Green Beans",
-      "Baked Potato Wedges",
-      "Steamed Yellow Squash",
-      "Classic Cheese Pizza",
-      "Pepperoni Pizza",
-      "Garlic Herb Breadstick",
-      "Premium Pizza Sauce",
-      "Grilled Black Bean Burger",
-      "Classic Hot Dog",
-      "Fresh Cut French Fries UNCP",
-      "Smash Burger",
-      "Dill Pickle Slices",
-      "American Cheese",
-      "Cheddar Cheese",
-      "Swiss Cheese",
-      "Lettuce",
-      "Sliced Red Onions",
-      "Sliced Tomatoes",
-      "Steamed Fresh Broccoli",
-      "Roasted Grape Tomatoes",
-      "Roasted Mushrooms",
-      "Alfredo Sauce",
-      "Grilled Italian Sausage",
-      "Sliced Grilled Chicken",
-      "Penne",
-      "Baby Spinach",
-      "Garlic Roasted Vegetables",
-      "Signature Chips",
-      "Flour Tortilla",
-      "Hoagie Roll",
-      "White Bread",
-      "Chicken Salad",
-      "Ham",
-      "Pepper Jack Cheese",
-      "Provolone Cheese",
-      "Roast Beef",
-      "Turkey Breast",
-      "Banana Peppers",
-      "Green Leaf Lettuce",
-      "Sliced Onions",
-      "Chipotle Mayonnaise",
-      "Dijon Mustard",
-      "Hummus",
-      "Mayonnaise",
-      "Oil & Vinegar",
-      "Chicken Noodle Soup",
-      "Chocolate Brownie",
-      "Oatmeal Raisin Cookie",
-      "Cinnamon-Honey Granola",
-      "Cinnamon-Sugar",
-      "Whipped Topping",
-      "Chocolate Chips",
-      "Powdered Sugar",
-      "Belgian Waffle Mix",
-      "Chocolate Syrup",
-      "Dried Cranberries",
-      "Pancake Syrup",
-      "Bacon Pieces",
-      "Chopped Hard-Cooked Egg",
-      "Sunflower Seeds",
-      "Cucumbers",
-      "Grape Tomatoes",
-      "Romaine Lettuce",
-      "Spring Salad Mix",
-      "Blue Cheese Dressing",
-      "Greek Vinaigrette",
-      "Lite Italian Dressing",
-      "Black Beans",
-      "Shredded Cheddar Cheese",
-      "Shredded Carrots",
-      "Sliced Mixed Bell Peppers",
-      "Sliced Mushrooms",
-      "Ranch Dressing",
-      "Banana",
-      "Diced Pineapple",
-      "Mandarin Oranges",
-      "Apple Juice",
-      "Mango",
-      "Oat Milk"
+      {
+        "name": "Korean BBQ Tofu",
+        "calories": 133
+      },
+      {
+        "name": "Baked Potato Wedges",
+        "calories": 82
+      },
+      {
+        "name": "Steamed Yellow Squash",
+        "calories": 8
+      },
+      {
+        "name": "Classic Cheese Pizza",
+        "calories": 269
+      },
+      {
+        "name": "Garlic Herb Breadstick",
+        "calories": 174
+      },
+      {
+        "name": "Premium Pizza Sauce",
+        "calories": 10
+      },
+      {
+        "name": "Grilled Black Bean Burger",
+        "calories": 257
+      },
+      {
+        "name": "Classic Hot Dog",
+        "calories": 304
+      },
+      {
+        "name": "Fresh Cut French Fries UNCP",
+        "calories": 151
+      },
+      {
+        "name": "Smash Burger",
+        "calories": 341
+      },
+      {
+        "name": "Steamed Fresh Broccoli",
+        "calories": 18
+      },
+      {
+        "name": "Roasted Grape Tomatoes",
+        "calories": 347
+      },
+      {
+        "name": "Roasted Mushrooms",
+        "calories": 94
+      },
+      {
+        "name": "Alfredo Sauce",
+        "calories": 33
+      },
+      {
+        "name": "Garlic Roasted Vegetables",
+        "calories": 56
+      },
+      {
+        "name": "Signature Chips",
+        "calories": 98
+      },
+      {
+        "name": "Flour Tortilla",
+        "calories": 211
+      },
+      {
+        "name": "Hoagie Roll",
+        "calories": 176
+      },
+      {
+        "name": "White Bread",
+        "calories": 129
+      },
+      {
+        "name": "Chicken Salad",
+        "calories": 281
+      },
+      {
+        "name": "Chicken Noodle Soup",
+        "calories": 86
+      },
+      {
+        "name": "Chocolate Brownie",
+        "calories": 187
+      },
+      {
+        "name": "Oatmeal Raisin Cookie",
+        "calories": 115
+      },
+      {
+        "name": "Cinnamon-Honey Granola",
+        "calories": 1792
+      },
+      {
+        "name": "Whipped Topping",
+        "calories": 107
+      },
+      {
+        "name": "Chocolate Chips",
+        "calories": 50
+      },
+      {
+        "name": "Belgian Waffle Mix",
+        "calories": 452
+      },
+      {
+        "name": "Bacon Pieces",
+        "calories": 72
+      },
+      {
+        "name": "Chopped Hard-Cooked Egg",
+        "calories": 66
+      },
+      {
+        "name": "Cucumbers",
+        "calories": 4
+      },
+      {
+        "name": "Grape Tomatoes",
+        "calories": 8
+      },
+      {
+        "name": "Romaine Lettuce",
+        "calories": 7
+      },
+      {
+        "name": "Spring Salad Mix",
+        "calories": 2
+      },
+      {
+        "name": "Banana",
+        "calories": 57
+      }
     ]
   }
 }

@@ -23,7 +23,6 @@ const HEADERS = {
   "x-api-key": "ElevateAPIProd",
 };
 
-// Now includes attributes (where calories usually live)
 const QUERY_LOCATION_RECIPES = `
 query getLocationRecipes($campusUrlKey:String!,$locationUrlKey:String!,$date:String!,$mealPeriod:Int,$viewType:Commerce_MenuViewType!){
   getLocationRecipes(
@@ -56,7 +55,6 @@ query getLocationRecipes($campusUrlKey:String!,$locationUrlKey:String!,$date:Str
 }
 `.trim();
 
-// Basic filtering (optional)
 const STOP_WORDS = [
   "ketchup",
   "mustard",
@@ -85,6 +83,7 @@ const STOP_WORDS = [
   "knife",
   "seeds",
   "beans",
+  "dressing",
   "orange",
   "pineapple",
   "apple",
@@ -92,53 +91,35 @@ const STOP_WORDS = [
 ];
 
 function isUnimportant(name) {
-  const n = String(name || "")
-    .toLowerCase()
-    .trim();
-  if (!n) return true;
+  const n = name.toLowerCase().trim();
+
+  // exact match
   if (STOP_WORDS.includes(n)) return true;
+
+  // contains match (good for "Ketchup Packet", "Ice Water", etc.)
   if (STOP_WORDS.some((w) => n.includes(w))) return true;
+
   return false;
 }
 
-function filterMenuItems(items) {
-  // items can be strings or {name, calories}
-  return items.filter((it) => {
-    const name = typeof it === "string" ? it : it?.name;
-    return name && !isUnimportant(name);
-  });
+function filterMenuItems(names) {
+  return names.filter((n) => n && !isUnimportant(n));
 }
 
-// Meal periods (weekend uses Brunch)
-function mealPeriodsForDate(d) {
-  // JS: Sunday=0 ... Saturday=6
-  const day = d.getDay();
-  const isWeekend = day === 0 || day === 6;
-  if (isWeekend) {
-    return { Breakfast: 10, Lunch: 13, Dinner: 16 }; // Brunch in Lunch slot
-  }
-  return { Breakfast: 10, Lunch: 25, Dinner: 16 };
-}
+// ---- YOU MUST SET THESE (see getMealPeriods below) ----
+const MEAL_PERIODS = {
+  Breakfast: 10,
+  Lunch: 25,
+  Dinner: 16,
+};
 
 function baseSku(sku) {
-  const parts = String(sku || "").split("_");
+  const parts = sku.split("_");
   const last = parts[parts.length - 1];
   if (parts.length > 1 && /^\d+$/.test(last)) {
     return parts.slice(0, -1).join("_");
   }
   return sku;
-}
-
-function toIsoDate(d) {
-  // Local date -> YYYY-MM-DD
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, "0");
-  const dd = String(d.getDate()).padStart(2, "0");
-  return `${y}-${m}-${dd}`;
-}
-
-function dayName(d) {
-  return d.toLocaleDateString("en-US", { weekday: "long" });
 }
 
 async function fetchLocationRecipes(dateStr, mealPeriod) {
@@ -181,6 +162,15 @@ async function fetchLocationRecipes(dateStr, mealPeriod) {
   }
 }
 
+function skuNameMap(glr) {
+  const items = glr?.products?.items ?? [];
+  const map = {};
+  for (const it of items) {
+    if (it?.sku && it?.name) map[it.sku] = it.name;
+  }
+  return map;
+}
+
 function extractMenuSkus(glr) {
   const dateSkuMap = glr?.locationRecipesMap?.dateSkuMap ?? [];
   const skus = [];
@@ -209,94 +199,41 @@ function extractMenuSkus(glr) {
   return out;
 }
 
-// ---- Calories extraction ----
-// Calories are usually in attributes; this tries common keys and parses numbers from strings.
-function getCaloriesFromAttributes(attrs = []) {
-  const m = {};
-  for (const a of attrs) {
-    const k = String(a?.name ?? "")
-      .toLowerCase()
-      .trim();
-    if (!k) continue;
-    m[k] = a?.value;
-  }
-
-  const candidates = [
-    "calories",
-    "nutrition_calories",
-    "nf_calories",
-    "calories_per_serving",
-    "kcal",
-    "energy_kcal",
-    "energy",
-  ];
-
-  for (const key of candidates) {
-    const v = m[key];
-    if (v == null) continue;
-
-    const match = String(v).match(/[\d.]+/);
-    if (!match) continue;
-
-    const num = Number(match[0]);
-    if (Number.isFinite(num)) {
-      return Math.round(num); // 🔥 ROUND TO WHOLE NUMBER
-    }
-  }
-
-  const maybeJson =
-    m["nutrition"] ?? m["nutrition_facts"] ?? m["nutritionfacts"];
-
-  if (typeof maybeJson === "string") {
-    try {
-      const obj = JSON.parse(maybeJson);
-      const v = obj?.calories ?? obj?.Calories ?? obj?.nf_calories;
-      const match = String(v).match(/[\d.]+/);
-      if (match) {
-        const num = Number(match[0]);
-        if (Number.isFinite(num)) {
-          return Math.round(num); // 🔥 ROUND HERE TOO
-        }
-      }
-    } catch {}
-  }
-
-  return null;
-}
-
-function skuInfoMap(glr) {
-  const items = glr?.products?.items ?? [];
-  const map = {};
-  for (const it of items) {
-    if (!it?.sku) continue;
-    map[it.sku] = {
-      name: it.name ?? null,
-      calories: getCaloriesFromAttributes(it.attributes),
-    };
-  }
-  return map;
-}
-
-// Returns array of objects: { name, calories }
-function resolveItems(menuSkus, skuToInfo) {
+function resolveNames(menuSkus, skuToName) {
   const out = [];
   const seen = new Set();
 
   for (const sku of menuSkus) {
-    const info = skuToInfo[sku] ?? skuToInfo[baseSku(sku)];
-    const name = info?.name;
-    const calories = info?.calories;
-
-    // 🔥 REMOVE ITEMS WITH NULL CALORIES
-    if (!name || calories == null) continue;
-
-    if (seen.has(name)) continue;
-    seen.add(name);
-
-    out.push({ name, calories });
+    const name = skuToName[sku] ?? skuToName[baseSku(sku)];
+    if (name && !seen.has(name)) {
+      seen.add(name);
+      out.push(name);
+    }
   }
-
   return out;
+}
+
+function mealPeriodsForDate(d) {
+  // JS: Sunday=0 ... Saturday=6
+  const day = d.getDay();
+  const isWeekend = day === 0 || day === 6;
+  if (isWeekend) {
+    // use Brunch in Lunch slot
+    return { Breakfast: 10, Lunch: 13, Dinner: 16 };
+  }
+  return { Breakfast: 10, Lunch: 25, Dinner: 16 };
+}
+
+function toIsoDate(d) {
+  // Keep it simple (local time): YYYY-MM-DD
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${dd}`;
+}
+
+function dayName(d) {
+  return d.toLocaleDateString("en-US", { weekday: "long" });
 }
 
 async function build7Days(startDate) {
@@ -312,20 +249,22 @@ async function build7Days(startDate) {
 
     const periods = mealPeriodsForDate(d);
     for (const [mealName, mp] of Object.entries(periods)) {
+      if (!mp) {
+        weekly[dn][mealName] = [];
+        continue;
+      }
+
       const glr = await fetchLocationRecipes(dateStr, mp);
-
-      const skuToInfo = skuInfoMap(glr);
+      const skuToName = skuNameMap(glr);
       const menuSkus = extractMenuSkus(glr);
-
-      // Store as objects with calories:
-      weekly[dn][mealName] = filterMenuItems(resolveItems(menuSkus, skuToInfo));
+      weekly[dn][mealName] = filterMenuItems(resolveNames(menuSkus, skuToName));
     }
   }
 
   return weekly;
 }
 
-// ---- OPTIONAL: print meal period IDs ----
+// ---- OPTIONAL: print meal period IDs so you can set MEAL_PERIODS correctly ----
 const QUERY_LOCATION = `
 query getLocation($campusUrlKey:String!,$locationUrlKey:String!){
   getLocation(campusUrlKey:$campusUrlKey locationUrlKey:$locationUrlKey){
@@ -371,13 +310,13 @@ async function getMealPeriods() {
 // ------------------ main ------------------
 (async () => {
   try {
-    // Uncomment to print meal periods:
-    // console.log(await getMealPeriods());
-
     const weekly = await build7Days(new Date());
 
-    // Write JSON (now includes calories per item when available)
-    await fs.writeFile(OUTPUT_PATH, JSON.stringify(weekly, null, 2), "utf8");
+    // Convert to formatted JSON string
+    const output = JSON.stringify(weekly, null, 2);
+
+    // Write to src/data/dining_hall.json so the service reads the same file.
+    await fs.writeFile(OUTPUT_PATH, output, "utf8");
 
     console.log("Saved to dining_hall.json successfully.");
   } catch (err) {
